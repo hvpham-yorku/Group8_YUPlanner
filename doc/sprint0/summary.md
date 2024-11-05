@@ -1,5 +1,5 @@
 ## Project Objectives:
-This project aims to develop a user-centric app that simplifies the course selection, professor information, GPA requirements, enrollment actions (add/remove, drop, or switch sections), and semester management process for students at York University, enhancing their academic planning and experience.
+Our goal is to create an intuitive tool that will make academic preparation easier for York University students. The software will offer a full semester management tool and expedite enrollment operations (add, drop, and move sections), professor information, GPA requirements, and course selection. In this way, the software improves students' academic experience and planning effectiveness.
 
 ## Key Users: 
 1. Students: primary users—who access course information, view professor's ratings, manage class enrollments, and plan the degree. 
