@@ -2,9 +2,9 @@
 Our goal is to create an intuitive tool that will make academic preparation easier for York University students. The software will offer a full semester management tool and expedite enrollment operations (add, drop, and move sections), professor information, GPA requirements, and course selection. In this way, the software improves students' academic experience and planning effectiveness.
 
 ## Key Users: 
-1. Students: primary users—who access course information, view professor's ratings, manage class enrollments, and plan the degree. 
-2. Teaching Assistants: Secondary users who assist the students with their academic planning
-3. Professors/Instructors: User—they can review the planner to ensure the course details are accurate. 
+1. Students: The main users who depend on the app for degree planning, enrollment management, professor ratings, and course information.
+2. Academic advisors: Help students organize their studies and offer advice on program requirements and course choices.
+3. Instructors and professors: Check the app to make sure the course information is correct and current.
 
 ## Key Usage Scenarios:
 * Scenario 1: A student views the prerequisite list for an advanced course to determine if they are eligible to enrol or need additional courses beforehand.
