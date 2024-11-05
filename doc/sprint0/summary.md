@@ -12,14 +12,14 @@ Our goal is to create an intuitive tool that will make academic preparation easi
 * Review of the Course and Professors for an Informed Choice: Students look at course information and professor ratings to select sections that suit their availability and learning preferences.
 * Adjustments for Adds and Drops: Students utilize the app to quickly transfer between sections or modify their course registration during this time.
 * Support for Advising Sessions: An academic adviser helps a student by looking over their course schedule, making sure all program requirements are fulfilled, and making any adjustments.
-* 
+
 ## Principles: 
-1. View Course Prerequisites: Students check prerequisites to determine eligibility and prepare for future semesters.
-2. Access Professor Information: Students view professor profiles, previous student reviews, and contact information to gauge course expectations.
-3. Add/Drop/Move Courses: Students modify their course schedule by adding or dropping classes, or changing sections based on availability.
-4. Check Class Details: Students view details like location, time, and availability to avoid schedule conflicts.
-5. Plan Semester Schedule: Students create a comprehensive schedule that satisfies their academic requirements and personal preferences.
-6. Rate the professors.
-7. Advising Sessions: An academic advisor or TA uses the planner to help the students and ensure they are meeting the requirements and answering the student's inquiries. 
+* Seamless Prerequisite Check: Allow students to confirm course eligibility for upcoming terms.
+* Comprehensive Professor Information: Provide professor profiles, reviews, and contact information, helping students make informed choices about courses.
+* Efficient Course Modification: Enable students to easily add, drop, or switch courses based on availability and personal scheduling needs.
+* Detailed Class Information Access: Offer students quick access to class details, including time, location, and availability, to avoid scheduling conflicts.
+* Semester Schedule Planning: Assist students in creating a schedule that meets their academic and personal preferences.
+* Professor Feedback System: Include functionality for students to rate professors, supporting peer feedback.
+* Advising Session Support: Allow advisors to use the planner to help students meet program requirements, offering advice and course planning adjustments.
 
 
