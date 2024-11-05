@@ -3,9 +3,9 @@
 ## Existing Solutions
 
 ### York University Schedule Builder (VSB) 
--**Link:** [York University VSB](https://registrar.yorku.ca/enrol/guide/vsb)
--**Description:** VSB is an online self-serve tool that helps students search for courses, visualize schedule combinations, and avoid timing conflicts by displaying possible course schedules in an easy to navigate format.
--**Limitations:** 
+- **Link:** [York University VSB](https://registrar.yorku.ca/enrol/guide/vsb)
+- **Description:** VSB is an online self-serve tool that helps students search for courses, visualize schedule combinations, and avoid timing conflicts by displaying possible course schedules in an easy to navigate format.
+- **Limitations:** 
   - Students must manually register for their chosen courses in a separate module (REM), adding extra steps to the process
   - While it includes details like prerequisites, GPA requirements, professor names, and section availability, students 
     must know course codes beforehand, as there is no searchable course list
