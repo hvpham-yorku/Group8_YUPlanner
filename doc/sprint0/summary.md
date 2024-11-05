@@ -7,11 +7,11 @@ Our goal is to create an intuitive tool that will make academic preparation easi
 3. Instructors and professors: Check the app to make sure the course information is correct and current.
 
 ## Key Usage Scenarios:
-* Scenario 1: A student views the prerequisite list for an advanced course to determine if they are eligible to enrol or need additional courses beforehand.
-* Scenario 2: A student checks different sections of a course to find a time that fits their current schedule and preferences.
-* Scenario 3: A student uses the planner to view professor ratings and class details before selecting a section to ensure it aligns with their learning style and schedule.
-* Scenario 4: During the add/drop period, a student decides to switch sections or courses, using the planner to efficiently update their registration.
-* Scenario 5: An academic advisor assists a student by checking the planner to ensure they are meeting program requirements and adjusting their course plan accordingly.
+* Eligibility Check for Advanced Courses: To verify their eligibility or identify further courses they need to take, students look at the requirements for a course.
+* Choosing a Section Based on Schedule: Students look at many course sections to determine a class time that works for their preferences and actual schedule.
+* Review of the Course and Professors for an Informed Choice: Students look at course information and professor ratings to select sections that suit their availability and learning preferences.
+* Adjustments for Adds and Drops: Students utilize the app to quickly transfer between sections or modify their course registration during this time.
+* Support for Advising Sessions: An academic adviser helps a student by looking over their course schedule, making sure all program requirements are fulfilled, and making any adjustments.
 * 
 ## Principles: 
 1. View Course Prerequisites: Students check prerequisites to determine eligibility and prepare for future semesters.
