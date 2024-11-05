@@ -6,7 +6,7 @@ Key Users:
 2- Teaching Assistants: Secondary users who assist the students with their academic planning
 3- Professors/Instructors: User—they can review the planner to ensure the course details are accurate. 
 
-Key Use Cases:
+Principles: 
 1- View Course Prerequisites: Students check prerequisites to determine eligibility and prepare for future semesters.
 2- Access Professor Information: Students view professor profiles, previous student reviews, and contact information to gauge course expectations.
 3- Add/Drop/Move Courses: Students modify their course schedule by adding or dropping classes, or changing sections based on availability.
