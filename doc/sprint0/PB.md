@@ -134,7 +134,14 @@ You may find the graduation requirements in the planner.
 As courses are finished, requirements are updated dynamically.
 
 
-## User Story #16 View GPA and Course Requirements as an Advisor
+## User Story #16 Academic Progress Tracker
+Student
+
+Students can view their academic progress
+
+Students can plan their degree according to their progress
+
+The tracker will automatically update as the student completes any course
 
 ## User Story #17: Download Schedule
 Students can download their final timetable and store it for future reference.
