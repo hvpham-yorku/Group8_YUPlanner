@@ -11,4 +11,4 @@ The code will be documented in the README.md.
 ## 5. Integration:
 The feature is incorporated into the main branch without leading to any GitHub conflicts.
 ## 6: Quality of Code
-The code is tidy and error-free. Others should be able to grasp it easily.
+The code is tidy and error-free. Others should be able to understand it easily.
