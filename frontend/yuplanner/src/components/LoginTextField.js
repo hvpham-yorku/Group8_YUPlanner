@@ -8,7 +8,9 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-export default function LoginTextFields() {
+import LoginSignUpButtons from './LoginSignUpButtons';
+
+export default function LoginTextField() {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => {
@@ -51,6 +53,9 @@ export default function LoginTextFields() {
               ),
             }}
           />
+    </Box>
+    <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
+      <LoginSignUpButtons />
     </Box>
     </Paper>
     </Container>

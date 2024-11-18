@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextField from '../components/LoginTextField';
+import LoginTextField from '../components/LoginTextField';
 
 function Login() {
   return (
@@ -21,7 +21,7 @@ function Login() {
         fontSize: '75px'
         }}>YUPlanner</h1>
       <div style={{marginTop: '100px'}}>
-        <TextField />
+        <LoginTextField />
       </div>
     </div>
     </>
