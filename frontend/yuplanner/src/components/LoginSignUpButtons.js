@@ -9,7 +9,7 @@ export default function LoginSignUpButtons() {
   const navigate = useNavigate();
 
   const handleSignInClick = () => {
-    navigate('/services');
+    navigate('/student-profile');
   };
 
   const handleSignUpClick = () => {
