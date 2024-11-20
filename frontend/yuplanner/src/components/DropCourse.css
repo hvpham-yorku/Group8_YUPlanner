@@ -1,0 +1,75 @@
+/* General styling for the drop-courses container */
+.drop-courses {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Page title styling */
+.title {
+    font-size: 24px;
+    color: #b22222; /* Dark red color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* List styling */
+.course-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual course item styling */
+.course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #fff; /* White background for course items */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for course items */
+.course-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Course name styling */
+.course-name {
+    font-size: 18px;
+    color: #333; /* Dark gray */
+}
+
+/* Drop button styling */
+.drop-button {
+    padding: 8px 12px;
+    background-color: #b22222; /* Dark red */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for drop button */
+.drop-button:hover {
+    background-color: #8b0000; /* Darker red */
+}
+
+/* No courses message styling */
+.no-courses {
+    text-align: center;
+    color: #666; /* Light gray text */
+    font-size: 16px;
+    margin-top: 20px;
+}
