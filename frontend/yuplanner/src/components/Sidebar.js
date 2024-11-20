@@ -21,10 +21,10 @@ const Sidebar = () => {
         </div>
       </div>  
             <ul className ="sidebar-menu">
-                <li><Link to="/search-courses"className="sidebar-link">Search Courses</Link></li>
-                <li><Link to="/drop--course"className="sidebar-link">Drop Course</Link></li>
-                <li><Link to="/progress"className="sidebar-link">Your Progress</Link></li>
-                <li><Link to="/view-schedule"className="sidebar-link">View Full Schedule</Link></li>
+                <li><Link to="/services/search-courses" className="sidebar-link">Search Courses</Link></li>
+                <li><Link to="/services/drop--course" className="sidebar-link">Drop Course</Link></li>
+                <li><Link to="/services/progress" className="sidebar-link">Your Progress</Link></li>
+                <li><Link to="/services/view-schedule" className="sidebar-link">View Full Schedule</Link></li>
             </ul>
              {/* Sign Out Button */}
           <Link to="/signout-btn" style={{ textDecoration: 'none', marginTop: '10px' }}>
