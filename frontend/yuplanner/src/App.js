@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 // import logo from './logo.svg';
@@ -10,7 +10,8 @@ import AppBar from './components/AppBar';
 
 import LoginSignUpButtons from './components/LoginSignUpButtons';
 import Sidebar from './components/Sidebar';
-import ServicesPage from './pages/ServicesPage';
+import StudentProfile from './pages/StudentProfile';
+import ProfessorProfile from './pages/ProfessorProfile';
 import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
@@ -27,31 +28,40 @@ function App() {
             <Route path="/login" element={<Login/>} />
             
 
-            <Route path="/signup" element={<Signup/>} />
-            
-          {/* Add other routes here */}
-          <Route
-            path="/services/*"
-            element={
-              <div style={{ display: 'flex' }}>
-                <Sidebar />
-                <div style={{ marginLeft: '200px', padding: '20px', flexGrow: 1 }}>
-                {/* Other content can go here */}
-                 <h1 style={{ fontSize: '60px' }}>Welcome to your YUPlanner</h1>
-                  <h3>Select options from the Services menu.</h3>
-                  <Routes>
-                    <Route path="/search-courses" element={<SearchCourses />} />
-                    <Route path="/drop-course" element={<DropCourse />} />
-                    <Route path="/your-progress" element={<YourProgress />} />
-                    <Route path="/view-schedule" element={<ViewSchedule />} />
-                  </Routes>
-                 </div>
-                </div>
-            }
-            />
+            <Route path="/signup" element={<Signup/>}>
+            </Route>
+
+            <Route path="/professor-profile" element={<ProfessorProfile />}>
+            </Route>
+
+            <Route path="/student-profile" element={<StudentProfile />}>
+            </Route>
             </Routes>
           </div>
-    </Router>
+        </Router>
+
+            // element={
+            //   <div style={{ display: 'flex' }}>
+            //     <Sidebar />
+            //     <div style={{ marginLeft: '200px', padding: '20px', flexGrow: 1 }}>
+            //     {/* Other content can go here */}
+            //      <h1 style={{ fontSize: '60px' }}>Welcome to your YUPlanner</h1>
+            //       <h3>Select options from the Services menu.</h3>
+            //      </div>
+            //     <div style={{ marginLeft: '200px', padding: '20px', flexGrow: 1 }}>
+            //       <Routes>
+            //         <Route path="/search-courses" element={<SearchCourses />} />
+            //         <Route path="/drop-course" element={<DropCourse />} />
+            //         <Route path="/your-progress" element={<YourProgress />} />
+            //         <Route path="/view-schedule" element={<ViewSchedule />} />
+            //       </Routes>
+            //       </div>
+            //     </div>
+            // }
+            // />
+            // </Routes>
+    //   </div>
+    // </Router>
   );
 }
 

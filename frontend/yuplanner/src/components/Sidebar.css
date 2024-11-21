@@ -1,8 +1,8 @@
 /* Sidebar */
 .sidebar {
-    width: 300px;
+    width: 200px;
     height: 100vh;
-    background-color: #b22222; 
+    background-color: #E31837; 
     color: white; 
     display: flex;
     flex-direction: column;
@@ -42,20 +42,20 @@
   
   /* Sign out button */
   .sidebar .signout-btn {
-    margin-top: 10px;
-  font-size: 14px;
-  background-color: #000000;
-  color: white;
+    margin-top: 100px;
+    font-size: 14px;
+    background-color: #E1DFDC;
+    color: black;
   }
   
   .signout-btn:hover {
-    background-color: #333333; 
+    background-color: #D6CFCA; 
   }
 
   .sidebar-link {
-    font-size: 30px; 
+    font-size: 20px; 
     text-decoration: none; 
-    color: #000000; 
+    color: #ffffff; 
   }
   
   .sidebar-link:hover {
@@ -78,12 +78,11 @@
     font-size: 14px;
   }
 
-  /* Sign out button */
   .sidebar .view-profile-btn {
     margin-top: 10px;
-  font-size: 14px;
-  background-color: #000000;
-  color: white;
+   font-size: 14px;
+   background-color: #000000;
+   color: white;
   }
   
   .view-profile-btn:hover {
