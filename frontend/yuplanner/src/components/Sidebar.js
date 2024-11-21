@@ -22,8 +22,8 @@ const Sidebar = () => {
       </div>  
             <ul className ="sidebar-menu">
                 <li><Link to="/services/search-courses" className="sidebar-link">Search Courses</Link></li>
-                <li><Link to="/services/drop--course" className="sidebar-link">Drop Course</Link></li>
-                <li><Link to="/services/progress" className="sidebar-link">Your Progress</Link></li>
+                <li><Link to="/services/drop-course" className="sidebar-link">Drop Course</Link></li>
+                <li><Link to="/services/your-progress" className="sidebar-link">Your Progress</Link></li>
                 <li><Link to="/services/view-schedule" className="sidebar-link">View Full Schedule</Link></li>
             </ul>
              {/* Sign Out Button */}

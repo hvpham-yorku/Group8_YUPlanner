@@ -30,11 +30,25 @@ function App() {
             <Route path="/signup" element={<Signup/>} />
             
           {/* Add other routes here */}
-          <Route path="/services" element={<ServicesPage />} />
-              <Route path="/services/search-courses" element={<SearchCourses />} />
-              <Route path="/services/drop-course" element={<DropCourse />} />
-              <Route path="/services/your-progress" element={<YourProgress />} />
-              <Route path="/services/view-schedule" element={<ViewSchedule />} />
+          <Route
+            path="/services/*"
+            element={
+              <div style={{ display: 'flex' }}>
+                <Sidebar />
+                <div style={{ marginLeft: '200px', padding: '20px', flexGrow: 1 }}>
+                {/* Other content can go here */}
+                 <h1 style={{ fontSize: '60px' }}>Welcome to your YUPlanner</h1>
+                  <h3>Select options from the Services menu.</h3>
+                  <Routes>
+                    <Route path="/search-courses" element={<SearchCourses />} />
+                    <Route path="/drop-course" element={<DropCourse />} />
+                    <Route path="/your-progress" element={<YourProgress />} />
+                    <Route path="/view-schedule" element={<ViewSchedule />} />
+                  </Routes>
+                 </div>
+                </div>
+            }
+            />
             </Routes>
           </div>
     </Router>
