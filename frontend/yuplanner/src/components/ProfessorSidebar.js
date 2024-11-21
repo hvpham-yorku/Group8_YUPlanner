@@ -28,7 +28,7 @@ const ProfessorSidebar = () => {
       </div>
       <ul className="sidebar-menu">
         {/* <li><Link to="/profile" className="sidebar-link">Profile</Link></li> */}
-        <li><Link to="/assigned-courses" className="sidebar-link">Assigned Courses</Link></li>
+        <li><Link to="/manage-courses" className="sidebar-link">Manage Courses</Link></li>
         <li><Link to="/students-reviews" className="sidebar-link">Students Reviews</Link></li>
       </ul>
 
