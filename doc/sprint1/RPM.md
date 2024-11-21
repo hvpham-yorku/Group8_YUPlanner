@@ -14,13 +14,14 @@ Login Page, Search Bar, Student Profile, Advisor Profile and Professor’s Profi
 
 **1. View Course List**
 Description: Implement a module for students to check the course list. Students can also search the courses by using the course name or code. 
-Associated with User Story #1 and #8
+Associated with User Story #1 and #8.
+
 **2. Course Prerequisites and Course Description**
    - Description: Implementing a module for students to check course prerequisites. And read the course description.
    - Associated User Stories: #2 and #10. 
 **3. Add / Drop Course**
 Description: Add functionality for students to switch the sections and can easily add or drop the courses.
-Associated User Stories:  #3 and #6
+Associated User Stories:  #3 and #6.
 
 **4. Timetable Planner**
 Description: This tool enables students to create and manage their semester schedules and download them.
