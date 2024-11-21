@@ -25,7 +25,7 @@ Display user details, including name, email and enrolled courses.
 Allow students to edit their profile information.
 Changes should reflect immediately after saving. 
 
-**4. . User Story# 4: Viewing Course List**:
+**4. User Story# 4: Viewing Course List**:
    - As a student, I want to view the list of the courses, so I can select the required courses or electives and plan my schedule.
    - **Criteria of satisfaction** :
    - Display the course name, codes and brief description.
