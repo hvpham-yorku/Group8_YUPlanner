@@ -7,12 +7,14 @@ Implement the foundational features for the YU Planner, focusing on the course m
 ## User Stories for Sprint 1
 **1. User Story# 1: Login Page**
 As a student, I want to login in to the application using my credentials, so that I can access my dashboard. 
+
  **Criteria of satisfaction** :
 User can login using their username and password.
 Display an error message for invalid credentials.
 
 **2.  User Story #2: Signup Page**
 As a new user, I want to create an account so that I can access the YU planner.
+
  **Criteria of satisfaction** :
 Users can register by providing their First and Last name 
 User can select the account type 
@@ -20,6 +22,7 @@ User can create their email and password.
 
 **3. User Story#3: Student Profile**
 As a student, I want to view and update my student profile information, so that I can make sure my details are correct. 
+
  **Criteria of satisfaction** :
 Display user details, including name, email and enrolled courses.
 Allow students to edit their profile information.
@@ -27,24 +30,28 @@ Changes should reflect immediately after saving.
 
 **4. User Story# 4: Viewing Course List**:
    - As a student, I want to view the list of the courses, so I can select the required courses or electives and plan my schedule.
-   - **Criteria of satisfaction** :
+
+**Criteria of satisfaction** :
    - Display the course name, codes and brief description.
    - Enable the search option, so students can search about the course by name or code.
 
 **5. User Story #5: Drop Courses:**
 As a student, I want to drop the course from my schedule to adjust my academic plan.
+
 **Criteria of satisfaction:** 
 Drop courses with a single click
 Real-time updates of course status after changes. 
 
  **6. User Story #6: Search Courses**
 As a student, I want to search for specific courses to quickly find what I need.
+
 **Criteria of satisfaction:**
 Search bar with which user can easily search the course with name or code. 
 Display the accurate results within seconds
 
 **7. User Story #7: Professor’s Profile**
 As a professor, I want to create and edit my profile, so that students can see my details and any research programs.
+
 **Criteria of satisfaction:**
 Allow professors to add and update their profiles.
 Display profiles to students, including research programs and reviews.
