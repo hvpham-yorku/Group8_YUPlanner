@@ -26,11 +26,11 @@ Associated User Stories:  #3 and #6
 Description: This tool enables students to create and manage their semester schedules and download them.
 Associated User Stories: #4, #7 and #17.
 
-## 2. **Professor’s Profile **
+## 2. Professor’s Profile 
 Description: Professors can make their profiles and can edit their profiles. The professor can see the student's ratings. Professors can also update the courses information.If the professor has any research program he can post about it on his profile. Students can see the professor’s profile and the rating. Also, students can write down the review about the professor and rate them according to their experience. 
 Associated User Stories: #5, #12 and #19.
 
-## 3. **Advisor’s Profile **
+## 3. Advisor’s Profile 
 Description: The Advisor can see the student's schedule and can view their degree progress reports. Advisors can search for the courses.
 Associated User Stories: #18.
 
