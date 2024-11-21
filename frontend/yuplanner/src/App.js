@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 // import logo from './logo.svg';
@@ -24,11 +24,11 @@ function App() {
             <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
           
-            <Route path="/login" element={<Login/>}>
-            </Route>
+            <Route path="/login" element={<Login/>} />
+            
 
-            <Route path="/signup" element={<Signup/>}>
-            </Route>
+            <Route path="/signup" element={<Signup/>} />
+            
           {/* Add other routes here */}
           <Route
             path="/services/*"
@@ -50,7 +50,7 @@ function App() {
             }
             />
             </Routes>
-      </div>
+          </div>
     </Router>
   );
 }
