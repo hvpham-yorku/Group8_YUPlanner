@@ -8,13 +8,17 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginSignUpButtons() {
   const navigate = useNavigate();
 
+  const handleSignInClick = () => {
+    navigate('/services');
+  };
+
   const handleSignUpClick = () => {
     navigate('/signup');
   };
 
   return (
     <Stack spacing={2} direction="row">
-      <Button variant="contained">Sign In</Button>
+      <Button variant="contained" onClick={handleSignInClick}>Sign In</Button>
       <Button variant="contained" onClick={handleSignUpClick}>Sign Up</Button>
     </Stack>
   );
