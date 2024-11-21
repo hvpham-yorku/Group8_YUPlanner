@@ -73,24 +73,24 @@ As a professor, I want to create and edit my profile, so that students can see m
 
 ## Task Breakdown:
 
-#### ** 1. Login and Signup Page done by Salwan Aldahab**
+## ** 1. Login and Signup Page done by Salwan Aldahab**
 **Goal**: 
 - Implement a secure login and signup system so that users can access their dashboards.
 - Develop front-end components for the login page
 - Develop front-end components for the signup page.
 
-#### **2. Profiles Tasks**
+## **2. Profiles Tasks**
 **Goal**:  Create a Login Page and profiles for Students, Professors and Advisors each with specific functionalities.
 
-## 1. Student’s Profile  done by: Areeba Ansari and Anagha Koroth
+#### 1. Student’s Profile  done by: Areeba Ansari and Anagha Koroth
 - View Course List 
 - Drop Course
 - Search Courses
-## 2. Professor’s Profile done by: Mavra Muzmmal
+#### 2. Professor’s Profile done by: Mavra Muzmmal
 - Manage course
 - Student Review
 
-#### ** 3. Database done by Anusha Mansoor **
+## ** 3. Database done by Anusha Mansoor **
 **Goal**: Design and execute a database for courses which are accessible to Students and Professors with defined functionalities.
 - Design a database scheme to store the credentials
 - Validate the username and password
