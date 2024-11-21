@@ -4,20 +4,18 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import SignupTextFields from './SignupTextField';
 
-export default function CreateAccountButton() {
+export default function CreateAccountButton({ accountDetails }) {
   const navigate = useNavigate();
 
-  const handleCreateAccountClick = () => {
-    e.preventDefault()
-    const student={name,address}
-    console.log(student)
-    fetch("http://localhost:8080/student/add",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(student)
-
+  const handleCreateAccountClick = (e) => {
+    e.preventDefault();
+    const endpoint = accountDetails.type === 'student' ? 'student' : 'professor';
+    fetch(`http://localhost:8080/${endpoint}/add`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(accountDetails)
     })
-    navigate('/login');
+    .then(() => navigate('/login'));
   };
 
   return (
