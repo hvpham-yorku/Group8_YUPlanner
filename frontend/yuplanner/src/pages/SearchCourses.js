@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Box, MenuItem, Select, InputLabel, FormControl, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 
@@ -46,6 +46,13 @@ function SearchCourses() {
     const handleSessionChange = (event) => {
         setSession(event.target.value);
     };
+
+    useEffect(() => {
+        if (department) {
+            const departmentCourses = courses.filter((course) => course.department === department);
+            setFilteredCourses(departmentCourses);
+        }
+    }, [department]);
 
     return (
         <Box sx={{ display: 'flex' }}>

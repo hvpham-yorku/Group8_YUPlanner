@@ -6,10 +6,10 @@ import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
-import AppBar from './components/AppBar';
+//import AppBar from './components/AppBar';
 
-import LoginSignUpButtons from './components/LoginSignUpButtons';
-import Sidebar from './components/Sidebar';
+//import LoginSignUpButtons from './components/LoginSignUpButtons';
+//import Sidebar from './components/Sidebar';
 import StudentProfile from './pages/StudentProfile';
 import ProfessorProfile from './pages/ProfessorProfile';
 import SearchCourses from './pages/SearchCourses';
@@ -36,6 +36,8 @@ function App() {
 
             <Route path="/student-profile" element={<StudentProfile />}>
             </Route>
+            <Route path="/student-profile/search-courses" element={<SearchCourses />} />
+            <Route path="/student-profile/drop-course" element={<DropCourse />} />
             </Routes>
           </div>
         </Router>

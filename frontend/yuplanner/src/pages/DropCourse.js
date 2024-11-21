@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from '../components/Sidebar';
 import './DropCourse.css';
 
 const DropCourse = () => { // Changed from DropCourses to DropCourse
@@ -18,24 +19,27 @@ const DropCourse = () => { // Changed from DropCourses to DropCourse
     };
 
     return (
-        <div className="drop-courses">
-            <h1 className="title">Drop Courses</h1>
-            <ul className="course-list">
-                {courses.map(course => (
-                    <li key={course.id} className="course-item">
-                        <span className="course-name">{course.name}</span>
-                        <button
-                            className="drop-button"
-                            onClick={() => dropCourse(course.id)}
-                        >
-                            Drop
-                        </button>
-                    </li>
-                ))}
-            </ul>
-            {courses.length === 0 && (
-                <p className="no-courses">You have no courses enrolled.</p>
-            )}
+        <div style={{ display: 'flex' }}>
+            <Sidebar />
+            <div className="drop-courses" style={{ flex: 1, padding: '20px' }}>
+                <h1 className="title">Drop Courses</h1>
+                <ul className="course-list">
+                    {courses.map(course => (
+                        <li key={course.id} className="course-item">
+                            <span className="course-name">{course.name}</span>
+                            <button
+                                className="drop-button"
+                                onClick={() => dropCourse(course.id)}
+                            >
+                                Drop
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+                {courses.length === 0 && (
+                    <p className="no-courses">You have no courses enrolled.</p>
+                )}
+            </div>
         </div>
     );
 };

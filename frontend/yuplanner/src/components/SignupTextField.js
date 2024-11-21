@@ -108,6 +108,7 @@ export default function SignupTextFields() {
               </MenuItem>
             ))}
           </TextField>
+          <TextField id="standard-basic" label="ID Number" variant="standard" />
           <TextField id="standard-basic" label="Email" variant="standard" />
           <TextField id="standard-basic" label="Password" variant="standard" />
         </Box>
