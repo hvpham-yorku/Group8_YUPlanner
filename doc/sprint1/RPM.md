@@ -19,6 +19,7 @@ Associated with User Story #1 and #8.
 **2. Course Prerequisites and Course Description**
    - Description: Implementing a module for students to check course prerequisites. And read the course description.
    - Associated User Stories: #2 and #10. 
+
 **3. Add / Drop Course**
 Description: Add functionality for students to switch the sections and can easily add or drop the courses.
 Associated User Stories:  #3 and #6.
