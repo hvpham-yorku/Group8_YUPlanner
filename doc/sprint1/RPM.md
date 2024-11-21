@@ -12,17 +12,17 @@ Login Page, Search Bar, Student Profile, Advisor Profile and Professor’s Profi
 
 ## 1. Student Profile (Features):
 
-1. ** View Course List **
+**1. View Course List**
 Description: Implement a module for students to check the course list. Students can also search the courses by using the course name or code. 
 Associated with User Story #1 and #8
-2. ** Course Prerequisites and Course Description **
+**2. Course Prerequisites and Course Description**
    - Description: Implementing a module for students to check course prerequisites. And read the course description.
    - Associated User Stories: #2 and #10. 
-3. ** Add / Drop Course **
+**3. Add / Drop Course**
 Description: Add functionality for students to switch the sections and can easily add or drop the courses.
 Associated User Stories:  #3 and #6
 
-4. ** Timetable Planner **
+**4. Timetable Planner**
 Description: This tool enables students to create and manage their semester schedules and download them.
 Associated User Stories: #4, #7 and #17.
 
@@ -35,9 +35,14 @@ Description: The Advisor can see the student's schedule and can view their degre
 Associated User Stories: #18.
 
 ## Non-Functional Requirements
-- **Performance**: The system is under testing and can handle 5 - 10 users.
-- **Technology Stack**: SpringBoot for Java and MySQL database for backend and  React frontend. 
-- **Dependencies**:
+
+**Performance**:
+- The system is under testing and can handle 5 - 10 users.
+
+**Technology Stack**: 
+- SpringBoot for Java and MySQL database for backend and  React frontend. 
+
+**Dependencies**:
 - Frontend: React framework for UI 
 - Backend:  MySQL database for storing data, Java Springboot is a tool which connects database and React. 
 
@@ -50,10 +55,12 @@ Associated User Stories: #18.
 
 ## Timeline
 - Project Duration: 4 weeks
-  - Sprint 1: Nov 5 - Nov 19
-  - Sprint 2: Nov 20 - Dec 3
 
-##References to User Stories
+- Sprint 1: Nov 5 - Nov 19
+
+- Sprint 2: Nov 20 - Dec 3
+
+## References to User Stories
 
 #### User Story #1: Viewing Course List
 A student can View the list of courses they can take - for each semester → choose electives/required courses and plan out schedules.
