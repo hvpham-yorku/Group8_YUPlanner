@@ -73,7 +73,7 @@ As a professor, I want to create and edit my profile, so that students can see m
 
 ## Task Breakdown:
 
-## ** 1. Login and Signup Page done by Salwan Aldahab**
+## **1. Login and Signup Page done by Salwan Aldahab**
 **Goal**: 
 - Implement a secure login and signup system so that users can access their dashboards.
 - Develop front-end components for the login page
@@ -106,7 +106,7 @@ As a professor, I want to create and edit my profile, so that students can see m
 - Salwan Aldhahab ( React, Java Springboot)
 
 ## Decisions Made
-**Database Design:**
+ **Database Design:**
 - We decided to use MySQL for our database management system. We chose MySQL because it is very reliable, widely used and integrates seamlessly with Java Springboot.  
 **Backend and Frontend Stack:**
 - Backend: Java Springboot, RESTful APIs for handling.
