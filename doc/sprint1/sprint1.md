@@ -90,7 +90,7 @@ As a professor, I want to create and edit my profile, so that students can see m
 - Manage course
 - Student Review
 
-## ** 3. Database done by Anusha Mansoor **
+## **3. Database done by Anusha Mansoor**
 **Goal**: Design and execute a database for courses which are accessible to Students and Professors with defined functionalities.
 - Design a database scheme to store the credentials
 - Validate the username and password
@@ -106,13 +106,16 @@ As a professor, I want to create and edit my profile, so that students can see m
 - Salwan Aldhahab ( React, Java Springboot)
 
 ## Decisions Made
- **Database Design:**
+**Database Design:**
 - We decided to use MySQL for our database management system. We chose MySQL because it is very reliable, widely used and integrates seamlessly with Java Springboot.  
+
 **Backend and Frontend Stack:**
 - Backend: Java Springboot, RESTful APIs for handling.
 - Frontend: React provides a dynamic and user-friendly interface. 
+
 **Prioritization:**
 - Focus on executing the Profiles Database and basic Course management APIs to establish the core first.
+
 **Version Control and Collaboration:**
 - Using GitHub for source control with separate branches for each task.
 - Follow a pull request for the workflow to ensure the quality and track the progress.
