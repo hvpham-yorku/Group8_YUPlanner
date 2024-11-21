@@ -31,7 +31,7 @@ function App() {
             </Route>
           {/* Add other routes here */}
           <Route
-            path="/services"
+            path="/services/*"
             element={
               <div style={{ display: 'flex' }}>
                 <Sidebar />
@@ -39,15 +39,13 @@ function App() {
                 {/* Other content can go here */}
                  <h1 style={{ fontSize: '60px' }}>Welcome to your YUPlanner</h1>
                   <h3>Select options from the Services menu.</h3>
-                 </div>
-                <div style={{ marginLeft: '200px', padding: '20px', flexGrow: 1 }}>
                   <Routes>
                     <Route path="/search-courses" element={<SearchCourses />} />
                     <Route path="/drop-course" element={<DropCourse />} />
                     <Route path="/your-progress" element={<YourProgress />} />
                     <Route path="/view-schedule" element={<ViewSchedule />} />
                   </Routes>
-                  </div>
+                 </div>
                 </div>
             }
             />
