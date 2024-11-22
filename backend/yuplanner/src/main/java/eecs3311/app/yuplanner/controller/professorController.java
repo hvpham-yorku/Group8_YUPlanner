@@ -3,6 +3,7 @@ package eecs3311.app.yuplanner.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import eecs3311.app.yuplanner.service.professorService;
 
 @RestController
 @RequestMapping("/professor")
+@CrossOrigin
 public class professorController {
     @Autowired
     private professorService professorService;

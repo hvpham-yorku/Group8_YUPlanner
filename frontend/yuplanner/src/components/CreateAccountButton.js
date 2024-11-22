@@ -9,13 +9,22 @@ export default function CreateAccountButton({ accountDetails }) {
 
   const handleCreateAccountClick = (e) => {
     e.preventDefault();
-    const endpoint = accountDetails.type === 'student' ? 'student' : 'professor';
-    fetch(`http://localhost:8080/${endpoint}/add`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(accountDetails)
-    })
-    .then(() => navigate('/login'));
+    const { firstname, lastname, type, userid, username, password } = accountDetails;
+    console.log('Account Details:', accountDetails);
+    console.log("Account Type:", type);
+    let address;
+    if(type === 'student'){
+      address = String("http://localhost:8080/student/add");
+    }
+    else if(type === 'professor'){
+      address = String("http://localhost:8080/professor/add");
+    }
+    console.log("Address selected:", address);
+    fetch(address,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({ firstname, lastname, type, userid, username, password })
+    }).then(() => navigate('/login'));
   };
 
   return (

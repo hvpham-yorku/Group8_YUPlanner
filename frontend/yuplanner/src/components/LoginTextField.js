@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react'; 
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -11,6 +12,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import LoginSignUpButtons from './LoginSignUpButtons';
 
 export default function LoginTextField() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => {
@@ -19,6 +22,10 @@ export default function LoginTextField() {
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  }
+
+  const handleChange = (event) => {
+    setPassword(event.target.value);
   }
 
   const paperStyle = { padding: '50px 20px', width: 600, margin: '20px auto'}
@@ -32,13 +39,20 @@ export default function LoginTextField() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label="Username" variant="outlined" fullWidth/>
+      <TextField id="outlined-basic" label="Username" variant="outlined" fullWidth
+      name="username"
+      value={username}
+      onChange={(e)=>setUsername(e.target.value)}
+      />
       <TextField
             id="outlined-password-input"
             label="Password"
             variant="outlined"
             type={showPassword ? 'text' : 'password'}
             fullWidth
+            name="password"
+            value={password}
+            onChange={handleChange}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -55,7 +69,9 @@ export default function LoginTextField() {
           />
     </Box>
     <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
-      <LoginSignUpButtons />
+      <LoginSignUpButtons 
+      accountDetails={{ username, password }}
+      />
     </Box>
     </Paper>
     </Container>

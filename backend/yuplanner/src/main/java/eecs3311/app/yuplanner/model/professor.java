@@ -11,7 +11,7 @@ public class professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int employeeid;
+    private int userid;
     private String firstname;
     private String lastname;
     private String username;
@@ -29,12 +29,12 @@ public class professor {
         this.id = id;
     }
 
-    public int getEployeeid() {
-        return employeeid;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setEmployeeid(int employeeid) {
-        this.employeeid = employeeid;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public String getFirstname() {

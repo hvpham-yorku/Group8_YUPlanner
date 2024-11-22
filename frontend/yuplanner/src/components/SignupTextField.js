@@ -30,26 +30,22 @@ import CreateAccountButton from './CreateAccountButton';
 // }));
 
 const accountTypes = [
-  { type: 'student', label: 'Student' },
-  { type: 'professor', label: 'Professor' },
-  { type: 'advisor', label: 'Advisor' },
+  { value: 'student', label: 'Student' },
+  { value: 'professor', label: 'Professor' },
+  { value: 'advisor', label: 'Advisor' },
 ];
 
-export default function SignupTextFields({ setAccountDetails }) {
+export default function SignupTextFields() {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [type, setType] = useState('');
-  const [id, setID] = useState('');
-  const [email, setEmail] = useState('');
+  const [userid, setUserID] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleChange = (setter) => (e) => {
-    setter(e.target.value);
-    setAccountDetails((prevDetails) => ({
-      ...prevDetails,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const handleChange = (event) => {
+    setType(event.target.value);
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -68,47 +64,49 @@ export default function SignupTextFields({ setAccountDetails }) {
           <TextField id="standard-basic" label="First Name" variant="standard"
           name="firstname"
           value={firstname}
-          onChange={handleChange(setFirstName)}
+          onChange={(e)=>setFirstName(e.target.value)}
           />
           <TextField id="standard-basic" label="Last Name" variant="standard" 
           name="lastname"
           value={lastname}
-          onChange={handleChange(setLastName)}
+          onChange={(e)=>setLastName(e.target.value)}
           />
           <TextField
             id="standard-select-account-type"
             select
             label="Account Type"
-            name="type"
             value={type}
-            onChange={handleChange(setType)}
+            onChange={handleChange}
+            defaultValue=""
             helperText="Please select your account type"
             variant="standard"
           >
             {accountTypes.map((option) => (
-              <MenuItem key={option.type} value={option.type}>
+              <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
             ))}
           </TextField>
           <TextField id="standard-basic" label="ID Number" variant="standard" 
-          name="id"
-          value={id}
-          onChange={handleChange(setID)}
+          name="userid"
+          value={userid}
+          onChange={(e)=>setUserID(e.target.value)}
           />
           <TextField id="standard-basic" label="Email" variant="standard" 
-          name="email"
-          value={email}
-          onChange={handleChange(setEmail)}
+          name="username"
+          value={username}
+          onChange={(e)=>setUsername(e.target.value)}
           />
           <TextField id="standard-basic" label="Password" variant="standard" 
           name="password"
           value={password}
-          onChange={handleChange(setPassword)}
+          onChange={(e)=>setPassword(e.target.value)}
           />
         </Box>
         <Box display="flex" justifyContent="center" alignItems="center" mt={2} marginTop={5}>
-          <CreateAccountButton />
+          <CreateAccountButton 
+            accountDetails={{ firstname, lastname, type, userid, username, password }}
+          />
         </Box>
       </Paper>
     </Container>
