@@ -79,7 +79,7 @@ git clone https://github.com/hvpham-yorku/project-group_8.git
     mvn spring-boot:run
     ```
 
-4. The backend will run on [http://localhost:8081](http://localhost:8081)
+4. The backend will run on [http://localhost:8081](http://localhost:8080)
 
 ### Frontend
 
