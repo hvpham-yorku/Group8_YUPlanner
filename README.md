@@ -65,21 +65,23 @@ git clone https://github.com/hvpham-yorku/project-group_8.git
 
 ### Backend
 
-1. Navigate to the backend directory:
+1. Run the database file from 'backend/db/yuplanner.sql' using MySQL Workbench Desktop Application
+
+2. Navigate to the backend directory:
     ```sh
     cd doc/sprint0/setup/backend/yuplanner
     ```
-2. Currently, when running the backend, you need to change the credentials to grant the server access to your database in the `application.properties` file:
+3. Currently, when running the backend, you need to change the credentials to grant the server access to your database in the `application.properties` file:
     ```properties
     spring.datasource.username=your_username
     spring.datasource.password=your_password
     ```
-3. Start the backend server:
+4. Start the backend server:
     ```sh
     mvn spring-boot:run
     ```
 
-4. The backend will run on [http://localhost:8081](http://localhost:8080)
+5. The backend will run on [http://localhost:8080](http://localhost:8080)
 
 ### Frontend
 
