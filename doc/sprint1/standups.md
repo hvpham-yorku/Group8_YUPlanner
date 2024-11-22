@@ -138,3 +138,22 @@ Next, I will ensure the "Reviews" and "Manage Courses" links are functional and 
 
 Currently, there are no blockers, but I may need to discuss the exact features required on the placeholder pages with the team to avoid misalignment.
 
+
+## Nov 21, 2024 - Sprint 1 Standup 8
+**Done By Anusha Mansoor**
+
+## **What did you work on since the last standup?**
+
+I worked on connecting the database to the login page and the sign up page. I was able to get the sign up page to add new students and professors to the database. For the login page I was able to get students to sign in.
+
+## **What do you commit to next?**
+
+Next, I will ensure the database is connected to the rest of the profiles (professor and advisor) to the login and sign up page and I also plan on connecting the courses database to the rest of the features in the app.
+
+## **When do you think you’ll be done?**
+
+I plan to finish these tasks in Sprint 2.
+
+## **Do you have any blockers?**
+
+Currently, there are some blockers I faced are not being able to connect the professor database to the login page.
