@@ -65,7 +65,7 @@ git clone https://github.com/hvpham-yorku/project-group_8.git
 
 ### Backend
 
-1. Run the database file from 'backend/db/yuplanner.sql' using MySQL Workbench Desktop Application
+1. Run the database file from `backend/db/yuplanner.sql` using MySQL Workbench Desktop Application
 
 2. Navigate to the backend directory:
     ```sh
