@@ -30,50 +30,51 @@ As a student, I want to check the available course sections to choose the sectio
 Provides the timings, location and availability details of each section.
 Sections are grouped by course for easy navigation. 
 
-4. **User Story #3: Check Professor Details**
+3. **User Story #3: Check Professor Details**
 As a student, I want to view the professor’s information for each course section, so that I can choose the right professor who matches my learning style.
 
 **Criteria of satisfaction**: 
 Display the professor’s name, department and ratings.
 Make professor information accessible via section details. 
 
-5. **User Story #4: Move Course Section**
+4. **User Story #4: Move Course Section**
 As a student, I want to modify course sections, so that I can resolve scheduling conflicts.
 
 **Criteria of satisfaction**: 
 Display all available sections of a course which has available seats. 
 Switch the sections with just one click.
 
-6. **User Story #5: View Full Schedule**
+5. **User Story #5: View Full Schedule**
 As a student, I want to view my semester schedule in a calendar format so that I can avoid scheduling conflicts. 
 
 **Criteria of satisfaction**: 
 Display the timetable in a clear calendar form.
 Accurately display the results within seconds.
 
-7. **User Story #6: View Course Description**
+6. **User Story #6: View Course Description**
 As a student, I want to read the course description, so that I can understand the content and the expectations of the course.
 
 **Criteria of satisfaction**: 
 Provide a clear and concise description of each course.
 Display the course description on the course detail page.
 
-8. **User Story #7: Professor’s Ratings**
+7. **User Story #7: Professor’s Ratings**
 As a student, I want to rate the professor according to my experience and I want to read the other students' reviews as well. It would help me to choose the professor for my future courses.
 
 **Criteria of satisfaction**: 
 Display professor’s ratings and reviews
 Allow students to submit their ratings.
 
-9. **User Story #8: Academic Advisor Profile**
+8. **User Story #8: Academic Advisor Profile**
 As an academic advisor, I want to view student schedules and registered courses, so that I can better guide the students.
 
 **Criteria of satisfaction**: 
 Display student schedules and registered courses.
 
 
-10. **User Story #9: Download Schedule**
+9. **User Story #9: Download Schedule**
 As a student, I want to download my final schedules, so that I can store it for my future reference.
+
 **Criteria of satisfaction**: 
 Provide a download option as a PDF.
 Ensure the schedule reflects the recent revision.
