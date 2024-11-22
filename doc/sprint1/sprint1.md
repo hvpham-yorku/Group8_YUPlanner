@@ -121,3 +121,4 @@ As a professor, I want to create and edit my profile, so that students can see m
 - Follow a pull request for the workflow to ensure the quality and track the progress.
 - Using Discord for communications.
 - Using Trello for tracking everything. 
+https://trello.com/invite/b/6722a3bddc5fdd4041d8f0d0/ATTIf0466c79f1323d80053025f2b8be5a25C3FE6755/group8
