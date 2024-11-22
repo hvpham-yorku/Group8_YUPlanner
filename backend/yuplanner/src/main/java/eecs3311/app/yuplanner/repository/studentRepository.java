@@ -7,5 +7,5 @@ import eecs3311.app.yuplanner.model.*;
 @Repository
 
 public interface studentRepository extends JpaRepository<student, Integer> {
-
+    student findByUsernameAndPassword(String username, String password);
 }

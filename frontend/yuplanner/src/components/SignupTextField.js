@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, TextField, MenuItem, Container, Paper } from '@mui/material';
 
 import CreateAccountButton from './CreateAccountButton';
@@ -36,6 +36,17 @@ const accountTypes = [
 ];
 
 export default function SignupTextFields() {
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [type, setType] = useState('');
+  const [userid, setUserID] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = (event) => {
+    setType(event.target.value);
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <Paper elevation={3} style={{ padding: '50px 20px', margin: '20px auto' }}>
@@ -50,54 +61,22 @@ export default function SignupTextFields() {
           noValidate
           autoComplete="off"
         >
-          <TextField id="standard-basic" label="First Name" variant="standard" />
-          <TextField id="standard-basic" label="Last Name" variant="standard" />
-          {/* <TextField
-            id="standard-select-day"
-            select
-            label="Day"
-            defaultValue=""
-            helperText="Please select your day of birth"
-            variant="standard"
-          >
-            {dayOfTheMonth.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            id="standard-select-month"
-            select
-            label="Month"
-            defaultValue=""
-            helperText="Please select your month of birth"
-            variant="standard"
-          >
-            {months.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            id="standard-select-year"
-            select
-            label="Year"
-            defaultValue=""
-            helperText="Please select your year of birth"
-            variant="standard"
-          >
-            {years.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField> */}
+          <TextField id="standard-basic" label="First Name" variant="standard"
+          name="firstname"
+          value={firstname}
+          onChange={(e)=>setFirstName(e.target.value)}
+          />
+          <TextField id="standard-basic" label="Last Name" variant="standard" 
+          name="lastname"
+          value={lastname}
+          onChange={(e)=>setLastName(e.target.value)}
+          />
           <TextField
             id="standard-select-account-type"
             select
             label="Account Type"
+            value={type}
+            onChange={handleChange}
             defaultValue=""
             helperText="Please select your account type"
             variant="standard"
@@ -108,12 +87,26 @@ export default function SignupTextFields() {
               </MenuItem>
             ))}
           </TextField>
-          <TextField id="standard-basic" label="ID Number" variant="standard" />
-          <TextField id="standard-basic" label="Email" variant="standard" />
-          <TextField id="standard-basic" label="Password" variant="standard" />
+          <TextField id="standard-basic" label="ID Number" variant="standard" 
+          name="userid"
+          value={userid}
+          onChange={(e)=>setUserID(e.target.value)}
+          />
+          <TextField id="standard-basic" label="Email" variant="standard" 
+          name="username"
+          value={username}
+          onChange={(e)=>setUsername(e.target.value)}
+          />
+          <TextField id="standard-basic" label="Password" variant="standard" 
+          name="password"
+          value={password}
+          onChange={(e)=>setPassword(e.target.value)}
+          />
         </Box>
         <Box display="flex" justifyContent="center" alignItems="center" mt={2} marginTop={5}>
-          <CreateAccountButton />
+          <CreateAccountButton 
+            accountDetails={{ firstname, lastname, type, userid, username, password }}
+          />
         </Box>
       </Paper>
     </Container>
