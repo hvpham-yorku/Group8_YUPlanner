@@ -16,7 +16,7 @@ import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
 import ViewSchedule from './pages/ViewSchedule';
-
+import CourseDetails from './pages/CourseDetails.js';
 function App() {
 
   return (
@@ -38,6 +38,7 @@ function App() {
             </Route>
             <Route path="/student-profile/search-courses" element={<SearchCourses />} />
             <Route path="/student-profile/drop-course" element={<DropCourse />} />
+            <Route path="/student-profile/course-details/:id" element={<CourseDetails />} />
             </Routes>
           </div>
         </Router>

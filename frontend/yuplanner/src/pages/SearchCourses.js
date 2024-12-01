@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Box, MenuItem, Select, InputLabel, FormControl, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Sidebar from '../components/Sidebar';
+import { Link } from 'react-router-dom';
 
 function SearchCourses() {
     //Searching the courses
     const [session, setSession] = useState('');
-    const [department, setDepartment] = useState('');
+    const [dept, setDepartment] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredCourses, setFilteredCourses] = useState([]);
     
     
     const courses = [
-        { course_code: 'EECS 2101', course_title: 'Fundamentals of Data Structures', department: 'EECS' },
-        { course_code: 'EECS 3451', course_title: 'Signals and Systems', department: 'EECS' },
-        { course_code: 'ENG 2003', course_title: 'Effective Engineering Communication', department: 'ENG' },
-        { course_code: 'ENG 3000', course_title: 'Professional Engineering Practice', department: 'ENG' },
+        { id: 1, coursecode: 'EECS 2101', coursename: 'Fundamentals of Data Structures', dept: 'EECS' },
+        { id: 2, coursecode: 'EECS 3451', coursename: 'Signals and Systems', dept: 'EECS' },
+        { id: 3, coursecode: 'ENG 2003', coursename: 'Effective Engineering Communication', dept: 'ENG' },
+        { id: 4, coursecode: 'ENG 3000', coursename: 'Professional Engineering Practice', dept: 'ENG' },
     ];
 
     //filter the courses by department
@@ -23,7 +24,7 @@ function SearchCourses() {
         setDepartment(selectedDepartment);
     
 
-    const departmentCourses = courses.filter((course) => course.department === selectedDepartment);
+    const departmentCourses = courses.filter((course) => course.dept === selectedDepartment);
     setFilteredCourses(departmentCourses);
     setSearchQuery('');
 };
@@ -32,12 +33,12 @@ function SearchCourses() {
         const query = event.target.value;
         setSearchQuery(query);
 
-    const departmentCourses = courses.filter((course) => course.department === department); 
+    const departmentCourses = courses.filter((course) => course.dept === dept); 
         setFilteredCourses(
           departmentCourses.filter(
             (course) =>
-              course.course_title.toLowerCase().includes(query.toLowerCase()) ||
-              course.course_code.toLowerCase().includes(query.toLowerCase())
+              course.coursename.toLowerCase().includes(query.toLowerCase()) ||
+              course.coursecode.toLowerCase().includes(query.toLowerCase())
           )
         );
       };
@@ -48,11 +49,11 @@ function SearchCourses() {
     };
 
     useEffect(() => {
-        if (department) {
-            const departmentCourses = courses.filter((course) => course.department === department);
+        if (dept) {
+            const departmentCourses = courses.filter((course) => course.dept === dept);
             setFilteredCourses(departmentCourses);
         }
-    }, [department]);
+    }, [dept]);
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -62,7 +63,7 @@ function SearchCourses() {
             <Typography variant="h2" gutterBottom sx={{ marginBottom: 5 }}>
                 Search Courses
             </Typography>
-            <Typography sx={{ fontSize: '18px' }} sx={{ marginBottom: 3 }}>
+            <Typography sx={{ fontSize: '18px',  marginBottom: 3 }}>
                 Choose your Session and Department
             </Typography>
             <Box sx={{display: 'flex', flexDirection: 'column', gap: 2, maxWidth: '500px', margin: 'auto' }}>
@@ -76,7 +77,7 @@ function SearchCourses() {
                     </FormControl>
                     <FormControl fullWidth>
                         <InputLabel>Department</InputLabel>
-                        <Select value={department} onChange={handleDepartmentChange} label="Session" sx={{ width: '200px' }}>
+                        <Select value={dept} onChange={handleDepartmentChange} label="Session" sx={{ width: '200px' }}>
                             <MenuItem value="ENG">ENG</MenuItem>
                             <MenuItem value="EECS">EECS</MenuItem>
                         </Select>
@@ -103,10 +104,12 @@ function SearchCourses() {
                      </TableRow>
                  </TableHead>
              <TableBody>
-            {filteredCourses.map((course, index) => (
-                <TableRow key={index}>
-                    <TableCell>{course.course_code}</TableCell>
-                    <TableCell>{course.course_title}</TableCell>
+            {filteredCourses.map((course) => (
+                <TableRow key={course.id}>
+                    <TableCell>
+                        <Link to={`/student-profile/course-details/${course.id}`}>{course.coursecode}</Link>
+                    </TableCell>
+                    <TableCell>{course.coursename}</TableCell>
                 </TableRow>
                 ))}
             </TableBody>
