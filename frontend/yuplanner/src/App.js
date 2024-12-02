@@ -17,6 +17,8 @@ import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
 import ViewSchedule from './pages/ViewSchedule';
 import CourseDetails from './pages/CourseDetails.js';
+
+import AdvisorProfile from './pages/AdvisorProfile';
 function App() {
 
   return (
@@ -33,6 +35,8 @@ function App() {
 
             <Route path="/professor-profile" element={<ProfessorProfile />}>
             </Route>
+
+            <Route path="/advisor-profile" element={<AdvisorProfile />}> </Route>
 
             <Route path="/student-profile" element={<StudentProfile />}>
             </Route>
