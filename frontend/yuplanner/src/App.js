@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import { UserProvider } from './UserContext';
 
 //import AppBar from './components/AppBar';
 
@@ -20,6 +21,7 @@ import CourseDetails from './pages/CourseDetails.js';
 function App() {
 
   return (
+    <UserProvider>
     <Router>
           <div className="App">
             <Routes>
@@ -42,6 +44,8 @@ function App() {
             </Routes>
           </div>
         </Router>
+        </UserProvider>
+
 
             // element={
             //   <div style={{ display: 'flex' }}>

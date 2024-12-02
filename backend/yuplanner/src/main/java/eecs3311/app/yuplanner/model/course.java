@@ -24,6 +24,7 @@ public class course {
     private String courseterm;
     private String coursesection;
     private String coursetype;
+    private String coursedescription;
 
 
     public course(){
@@ -113,7 +114,7 @@ public class course {
         return courseinstructor;
     }
 
-    public void setCourseinstructor(String courseinstructor) {
+    public void setCourseinstructor(String course_instructor) {
         this.courseinstructor = courseinstructor;
     }
 
@@ -139,5 +140,13 @@ public class course {
 
     public void setCoursetype(String coursetype) {
         this.coursetype = coursetype;
+    }
+
+    public String getCoursedescription() {
+        return coursedescription;
+    }
+
+    public void setCoursedescription(String coursedescription) {
+        this.coursedescription = coursedescription;
     }
 }

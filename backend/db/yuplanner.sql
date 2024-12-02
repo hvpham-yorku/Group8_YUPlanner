@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `advisor`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `advisor` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `employeeid` int NOT NULL,
+  `userid` int NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -66,8 +66,9 @@ CREATE TABLE `course` (
   `coursetime` varchar(255) DEFAULT NULL,
   `coursetype` varchar(255) DEFAULT NULL,
   `dept` varchar(255) DEFAULT NULL,
+  `coursedescription` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +77,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'keele',3311,'Monday','90','Carina King','LSB 1002','software design','EECS 2011','E','F','19:00','LECT','EECS'),(2,'keele',2311,'Thuesday, Thrusday','90','Carina King','CHEM 102','software development','EECS 2011','Z','W','2:000','LECT','EECS'),(3,'keele',2311,'Monday, Wednesday','90','Jenny Peel','LSB 1002','software development','EECS 2011','E','F','19:00','LECT','EECS'),(4,'keele',1002,'Tuesday','60','Manny Delgado','CLH 1002','justice, morality, and law','','A','F','12:30','Tutorial','PHIL'),(5,'keele',1001,'Thrusday','60','','CLH 1002','the meaning of life','','A','F','11:30','Tutorial','PHIL'),(6,'keele',3451,'Tuesday, Thrusday','90','Maven Donahue','ACW 003','signals and systems','EECS 2030','E','F','2:30','LECT','EECS');
+INSERT INTO `course` VALUES (1,'keele',3311,'Monday','90','Carina King','LSB 1002','software design','EECS 2011','E','FW2024','19:00','LECT','EECS',NULL),(2,'keele',2311,'Thuesday, Thrusday','90','Carina King','CHEM 102','software development','EECS 2011','Z','FW2024','2:000','LECT','EECS',NULL),(3,'keele',2311,'Monday, Wednesday','90','Jenny Peel','LSB 1002','software development','EECS 2011','E','FW2025','19:00','LECT','EECS',NULL),(4,'keele',1002,'Tuesday','60','Manny Delgado','CLH 1002','justice, morality, and law','','A','FW2024','12:30','Tutorial','PHIL',NULL),(5,'keele',1001,'Thrusday','60','','CLH 1002','the meaning of life','','A','FW2024','11:30','Tutorial','PHIL',NULL),(6,'keele',3451,'Tuesday, Thrusday','90','Maven Donahue','ACW 003','signals and systems','EECS 2030','E','FW2024','2:30','LECT','EECS',NULL),(7,'keele',4000,'Monday','90','Carina King','LSB 1002','Capstone','EECS 2011','E','FW2024','19:00','LECT','ENG',NULL);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,13 +91,13 @@ DROP TABLE IF EXISTS `professor`;
 CREATE TABLE `professor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `courses` varchar(255) DEFAULT NULL,
-  `employeeid` int NOT NULL,
+  `userid` int NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +106,7 @@ CREATE TABLE `professor` (
 
 LOCK TABLES `professor` WRITE;
 /*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES (1,'EECS 2311',123654987,'Jenny','Peel','password','jpeel'),(2,'EECS 3311 EECS 2311',192837465,'Carina','King','password','cking'),(3,'PHIL 1002',995322178,'Manny','Delgado','password','mdelgado'),(4,'EECS 3451',899237065,'Maven','Donahue','password','mdonahue');
+INSERT INTO `professor` VALUES (1,'EECS 2311',123654987,'Jenny','Peel','password','jpeel'),(2,'EECS 3311 EECS 2311',192837465,'Carina','King','password','cking'),(3,'PHIL 1002',995322178,'Manny','Delgado','password','mdelgado'),(4,'EECS 3451',899237065,'Maven','Donahue','password','mdonahue'),(5,NULL,466324,'naomi','bank','password','naomi@yorku.ca'),(6,NULL,42674826,'Sam','Wilson','password','sam@yorku.ca'),(7,NULL,543219876,'Ella','Hen','password','ehen@yorku.ca');
 /*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,10 +123,10 @@ CREATE TABLE `student` (
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `studentid` int NOT NULL,
+  `userid` int NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +135,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'EECS 3311','Maya','Hart','password',123456789,'mhart'),(2,'EECS 3311','John','Smith','password',987654321,'jsmith'),(3,'EECS 2311','Penny','Jean','password',123498765,'pjean'),(4,'PHIL 1002','Leo','Pen','password',217863211,'lpen'),(5,'PHIL 1002','Katy','Brink','password',927634598,'kbrink');
+INSERT INTO `student` VALUES (1,'EECS 3311','Maya','Hart','password',123456789,'mhart'),(2,'EECS 3311','John','Smith','password',987654321,'jsmith'),(3,'EECS 2311','Penny','Jean','password',123498765,'pjean'),(4,'PHIL 1002','Leo','Pen','password',217863211,'lpen'),(5,'PHIL 1002','Katy','Brink','password',927634598,'kbrink'),(6,NULL,NULL,NULL,NULL,0,NULL),(7,NULL,'Paige','Lawrence','password',674674,NULL),(8,NULL,'blake','winslow','password',7583673,'bwinslow@yorku.ca'),(9,NULL,'Catherine','Kramer','password',583646472,'ckramer@yorku.ca'),(10,NULL,'lola','path','password',472848892,'lolap@yorku.ca'),(11,NULL,'nina','dobrev','password',4726482,'nina@yorku.ca'),(12,NULL,'Alice','Kane','password',123456789,'akane@my.yorku.ca'),(13,NULL,'John','Doe','password',123456789,'johndoe@my.yorku.ca'),(14,NULL,'John','Doe','password',123456789,'johndoe@my.yorku.ca');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -147,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-18 15:32:55
+-- Dump completed on 2024-12-02  7:40:33

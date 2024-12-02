@@ -4,43 +4,71 @@ import Sidebar from '../components/Sidebar';
 import { Link } from 'react-router-dom';
 
 function SearchCourses() {
-    //Searching the courses
     const [session, setSession] = useState('');
-    const [dept, setDepartment] = useState('');
+    const [department, setDepartment] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredCourses, setFilteredCourses] = useState([]);
-    
-    
-    const courses = [
-        { id: 1, coursecode: 'EECS 2101', coursename: 'Fundamentals of Data Structures', dept: 'EECS' },
-        { id: 2, coursecode: 'EECS 3451', coursename: 'Signals and Systems', dept: 'EECS' },
-        { id: 3, coursecode: 'ENG 2003', coursename: 'Effective Engineering Communication', dept: 'ENG' },
-        { id: 4, coursecode: 'ENG 3000', coursename: 'Professional Engineering Practice', dept: 'ENG' },
-    ];
+    const [courses, setCourses] = useState([]); // Store all courses fetched from the backend
 
-    //filter the courses by department
+    // const courses = [
+    //     { course_code: 'EECS 2101', course_title: 'Fundamentals of Data Structures', department: 'EECS' },
+    //     { course_code: 'EECS 3451', course_title: 'Signals and Systems', department: 'EECS' },
+    //     { course_code: 'ENG 2003', course_title: 'Effective Engineering Communication', department: 'ENG' },
+    //     { course_code: 'ENG 3000', course_title: 'Professional Engineering Practice', department: 'ENG' },
+    // ];
+
+    useEffect(() => {
+        fetch("http://localhost:8080/course/getAll")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Fetched courses:", data); // Add this log
+            setCourses(data);
+            setFilteredCourses(data);
+          })
+          .catch((error) => console.error("Error fetching courses:", error));
+      }, []);
+
     const handleDepartmentChange = (event) => {
         const selectedDepartment = event.target.value;
+        console.log("Selected Department:", selectedDepartment); 
         setDepartment(selectedDepartment);
-    
-
-    const departmentCourses = courses.filter((course) => course.dept === selectedDepartment);
-    setFilteredCourses(departmentCourses);
-    setSearchQuery('');
-};
+      
+        // Filter courses by dept field
+        const departmentCourses = courses.filter(
+          (course) => course.dept && course.dept.toLowerCase() === selectedDepartment.toLowerCase()
+        );
+        console.log("Filtered Courses by Department:", departmentCourses); 
+        setFilteredCourses(departmentCourses);
+        setSearchQuery(""); 
+      };
+      
 
     const handleSearchChange = (event) => {
         const query = event.target.value;
         setSearchQuery(query);
 
-    const departmentCourses = courses.filter((course) => course.dept === dept); 
+    const departmentCourses = courses.filter((course) => course.dept === department);
+    console.log("Department Courses:", departmentCourses); 
         setFilteredCourses(
           departmentCourses.filter(
-            (course) =>
-              course.coursename.toLowerCase().includes(query.toLowerCase()) ||
-              course.coursecode.toLowerCase().includes(query.toLowerCase())
+            (course) => {
+                const courseCode = course.coursecode ? String(course.coursecode).toLowerCase() : ""; 
+                const courseName = course.coursename ? course.coursename.toLowerCase() : "";
+                return (
+                    courseCode.includes(query.toLowerCase()) || 
+                    courseName.includes(query.toLowerCase())
+                );
+            }
+            // course.coursename.toLowerCase().includes(query.toLowerCase()) ||
+            // String(course.coursecode).toLowerCase().includes(query.toLowerCase())
           )
         );
+        console.log("Filtered Courses after Search:", departmentCourses); 
       };
     
     //Changing session and deparemnet
@@ -49,11 +77,12 @@ function SearchCourses() {
     };
 
     useEffect(() => {
-        if (dept) {
-            const departmentCourses = courses.filter((course) => course.dept === dept);
+        if (department) {
+            const departmentCourses = courses.filter((course) => course.dept === department);
+            console.log("Filtered Courses:", departmentCourses); 
             setFilteredCourses(departmentCourses);
         }
-    }, [dept]);
+    }, [department]);
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -77,23 +106,24 @@ function SearchCourses() {
                     </FormControl>
                     <FormControl fullWidth>
                         <InputLabel>Department</InputLabel>
-                        <Select value={dept} onChange={handleDepartmentChange} label="Session" sx={{ width: '200px' }}>
+                        <Select value={department} onChange={handleDepartmentChange} label="Session" sx={{ width: '200px' }}>
                             <MenuItem value="ENG">ENG</MenuItem>
                             <MenuItem value="EECS">EECS</MenuItem>
+                            <MenuItem value="PHIL">PHIL</MenuItem>
                         </Select>
                     </FormControl>
                 </Box>
 
-                {/* Physical Search Bar */}
+                {/* Physical Search Bar
                 <TextField label="Search Course" variant="outlined" fullWidth value={searchQuery} onChange={handleSearchChange} sx={{ width: '500px' }}/>
 
                 {/* Search Button 
                 <Button variant="contained" color="error" sx={{ width: '100px', marginTop: 2 }} onClick={handleSearch}>
                     Search
                 </Button>*/}
-            </Box>
+            {/* </Box>  */}
 
-            {/* Filtering courses */}
+            {/* Filtering courses
             {filteredCourses.length > 0 && (
                 <TableContainer sx={{ marginTop: 2, width: '500px', marginX: 'auto' }}>
                  <Table>
@@ -115,9 +145,9 @@ function SearchCourses() {
             </TableBody>
          </Table>
         </TableContainer>
-        )}
+        )} */}
 
-        {/* If no courses are found*/}
+        {/* If no courses are found
         {filteredCourses.length === 0 && searchQuery && (
              <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
                  No courses found
@@ -125,7 +155,54 @@ function SearchCourses() {
             )}
         </Box>
     </Box>
-    );
+    ); */}
+
+        <TextField
+            label="Search Course"
+            variant="outlined"
+            fullWidth
+            value={searchQuery}
+            onChange={handleSearchChange}
+            sx={{ width: "500px" }}
+          />
+        </Box>
+
+        {/* Display courses */}
+        {filteredCourses.length > 0 ? (
+          <TableContainer sx={{ marginTop: 2, width: "500px", marginX: "auto" }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Course Code</TableCell>
+                  <TableCell>Course Title</TableCell>
+                  <TableCell>Instructor</TableCell>
+                  <TableCell>Term</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {filteredCourses.map((course, index) => (
+                <TableRow key={index}>
+                    <TableCell>{String(course.coursecode)}</TableCell>
+                    <TableCell>{course.coursename}</TableCell>
+                    <TableCell>{course.courseinstructor}</TableCell>
+                    <TableCell>{course.courseterm}</TableCell>
+                </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+          </TableContainer>
+        ) : (
+          searchQuery && (
+            <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
+              No courses found
+            </Typography>
+          )
+        )}
+      </Box>
+    </Box>
+  );
+    
+
 }
    
 export default SearchCourses;

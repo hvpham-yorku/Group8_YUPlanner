@@ -3,6 +3,8 @@ package eecs3311.app.yuplanner.controller;
 import eecs3311.app.yuplanner.model.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,8 +47,8 @@ public class studentController {
             // Return a custom error or response indicating the student was not found
             return null;  // Or you can throw an exception or return an error message
         }
+        
     }
-    
-    
+
 
 }
