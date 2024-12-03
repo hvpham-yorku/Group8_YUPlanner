@@ -20,6 +20,7 @@ import CourseDetails from './pages/CourseDetails.js';
 
 import AdvisorProfile from './pages/AdvisorProfile';
 import AdvisorViewCourses from './pages/AdvisorViewCourses.js';
+import AdvisorViewStudents from './pages/AdvisorViewStudents.js';
 function App() {
 
   return (
@@ -39,7 +40,7 @@ function App() {
 
             <Route path="/advisor-profile" element={<AdvisorProfile />}> </Route>
             <Route path="/advisor-profile/view-courses" element={<AdvisorViewCourses />} />
-            <Route path="/advisor-profile/view-students" element={<SearchCourses />} />
+            <Route path="/advisor-profile/view-students" element={<AdvisorViewStudents />} />
 
             <Route path="/student-profile" element={<StudentProfile />}>
             </Route>

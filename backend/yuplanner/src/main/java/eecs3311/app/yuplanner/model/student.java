@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ElementCollection;
+import java.util.List;
 
 @Entity
 public class student {
@@ -16,10 +18,11 @@ public class student {
     private String lastname;
     private String username;
     private String password;
-    private String courses;
 
-    public student(){
-    }
+    @ElementCollection
+    private List<String> courses;
+
+    public student() {}
 
     public int getId() {
         return id;
@@ -69,12 +72,16 @@ public class student {
         this.password = password;
     }
 
-    public String getCourses() {
+    public List<String> getCourses() {
         return courses;
     }
 
-    public void setCourses(String courses) {
+    public void setCourses(List<String> courses) {
         this.courses = courses;
     }
 
+    // Add a full name getter for convenience
+    public String getFullName() {
+        return this.firstname + " " + this.lastname;
+    }
 }
