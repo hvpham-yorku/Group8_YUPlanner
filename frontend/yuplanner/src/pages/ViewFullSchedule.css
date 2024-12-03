@@ -1,0 +1,132 @@
+/* src/pages/ViewFullSchedule.css */
+.schedule-container {
+    padding: 30px; /* Increased padding */
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 1200px; /* Increased max width for larger calendar */
+    margin: auto;
+}
+
+.schedule-title {
+    text-align: center;
+    font-size: 24px; /* Adjust as needed */
+    margin-bottom: 20px; /* Space between title and table */
+}
+
+
+.schedule-table {
+    width: 100%; /* Full table width */
+    border-collapse: collapse;
+    font-size: 16px; /* Increased font size */
+    table-layout: fixed; /* Set table layout to fixed for equal column widths */
+}
+
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ccc;
+    padding: 10px; /* Increased padding for cells */
+    text-align: center;
+    width: 16.67%; /* Equal width for each column (100% / 6 columns) */
+    height: 1px; /* Set fixed height for rows */
+}
+
+.schedule-table th {
+    background-color: #E31837; /* Header background */
+    color: white;
+}
+
+.schedule-cell {
+    height: 60px; /* Increased height for cells */
+    vertical-align: top; /* Align content to top */
+}
+
+.class-box {
+    background-color: #f8d7da; /* Light red background color */
+    color: #be4646; /* Black text color */
+    font-size: 12px; /* Course title font size */
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    height: 100%; /* Match the table cell height */
+    width: 100%; /* Match the table cell width */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add slight depth */
+    box-sizing: border-box; /* Ensure padding does not add extra size */
+}
+
+.class-box.alternate {
+    background-color: #cce5ff; /* Light blue background */
+    color: #004085; /* Dark blue text */
+    padding: 10px; /* Increased padding */
+}
+
+.eecs2210-lab {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+}
+
+/* Existing styles... */
+
+.course-description {
+    font-size: 10px; /* Smaller font size for description */
+    color: #721c24; /* Dark red text for better contrast */
+    margin-top: 2px; /* Small margin for spacing */
+    text-align: center; /* Center the description */
+}
+
+/* EECS 3216 lab slot */
+.eecs3216-lab {
+    background-color: #531d90; /* Light purple background */
+    color: #ba9ad1; /* Dark purple text */
+}
+.eecs3216-lab {
+    height: calc(20px * 3); /* Adjust based on your table's row height */
+    background-color: #e4cae9; /* Light green for the lab */
+    color: #270227;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.eng3000 {
+    background-color: #ffcc80; /* Light orange background color */
+    color: #b53f04; /* Darker text color for better contrast */
+    font-size: 12px; /* Course title font size */
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    height: 100%; /* Match the table cell height */
+    width: 100%; /* Match the table cell width */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add slight depth */
+    box-sizing: border-box; /* Ensure padding does not add extra size */
+}
+
+/* src/pages/ViewFullSchedule.css */
+
+/* src/pages/ViewFullSchedule.css */
+
+.download-button {
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #44d070;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
