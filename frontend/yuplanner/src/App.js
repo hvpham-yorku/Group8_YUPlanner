@@ -6,6 +6,7 @@ import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
+
 //import AppBar from './components/AppBar';
 
 //import LoginSignUpButtons from './components/LoginSignUpButtons';
@@ -17,6 +18,12 @@ import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
 import ViewSchedule from './pages/ViewSchedule';
 import CourseDetails from './pages/CourseDetails.js';
+
+import ManageCourses from './pages/ManageCourses';
+import StudentsReviews from './pages/StudentsReviews';
+import EditProfessorProfile from './pages/EditProfessorProfile';
+
+
 function App() {
 
   return (
@@ -24,9 +31,13 @@ function App() {
           <div className="App">
             <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
-          
+            <Route path="/edit-professor-profile" element={<EditProfessorProfile />} />
             <Route path="/login" element={<Login/>} />
             
+            <Route path="/manage-courses" element={<ManageCourses />} /> {/* Correctly reference ManageCourses */}
+          
+          <Route path="/students-reviews" element={<StudentsReviews/>}>
+          </Route>
 
             <Route path="/signup" element={<Signup/>}>
             </Route>

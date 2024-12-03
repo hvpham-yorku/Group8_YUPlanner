@@ -7,5 +7,6 @@ import eecs3311.app.yuplanner.model.professor;
 @Repository
 
 public interface professorRepository extends JpaRepository<professor, Integer> {
-
+	  // Custom query method to find professor by username
+    professor findByUsername(String username);
 }

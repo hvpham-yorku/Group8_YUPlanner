@@ -23,4 +23,14 @@ public class courseServiceImpl implements courseService{
     public List<course> getAllCourses(){
         return courseRepository.findAll();
     }
+    @Override
+    public boolean existsById(Integer id) {
+        return courseRepository.existsById(id); // Check if the course exists by its ID
+    }
+
+    @Override
+    public void deleteCourse(Integer id) {
+        courseRepository.deleteById(id); // Delete the course by ID
+    }
+     
 }
