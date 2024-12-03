@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eecs3311.app.yuplanner.model.professor;
+import eecs3311.app.yuplanner.model.student;
 import eecs3311.app.yuplanner.repository.professorRepository;
 
 @Service
@@ -22,5 +23,10 @@ public class professorServiceImpl implements professorService {
     @Override
     public List<professor> getAllProfessors(){
         return professorRepository.findAll();
+    }
+
+    @Override
+    public professor findProfessor(professor professor){
+        return professorRepository.findByUsernameAndPassword(professor.getUsername(), professor.getPassword());
     }
 }

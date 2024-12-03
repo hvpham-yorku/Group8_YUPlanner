@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Box, MenuItem, Select, InputLabel, FormControl, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { TextField, Box, MenuItem, Select, InputLabel, FormControl, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Link } from '@mui/material';
 import Sidebar from '../components/Sidebar';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 function SearchCourses() {
     //Searching the courses
@@ -9,14 +9,23 @@ function SearchCourses() {
     const [dept, setDepartment] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredCourses, setFilteredCourses] = useState([]);
-    
-    
-    const courses = [
-        { id: 1, coursecode: 'EECS 2101', coursename: 'Fundamentals of Data Structures', dept: 'EECS' },
-        { id: 2, coursecode: 'EECS 3451', coursename: 'Signals and Systems', dept: 'EECS' },
-        { id: 3, coursecode: 'ENG 2003', coursename: 'Effective Engineering Communication', dept: 'ENG' },
-        { id: 4, coursecode: 'ENG 3000', coursename: 'Professional Engineering Practice', dept: 'ENG' },
-    ];
+    const [courses, setCourses] = useState([]); 
+
+    useEffect(() => {
+        fetch("http://localhost:8080/course/getAll")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Fetched courses:", data); // Add this log
+            setCourses(data);
+            setFilteredCourses(data);
+          })
+          .catch((error) => console.error("Error fetching courses:", error));
+      }, []);
 
     //filter the courses by department
     const handleDepartmentChange = (event) => {
@@ -33,15 +42,24 @@ function SearchCourses() {
         const query = event.target.value;
         setSearchQuery(query);
 
-    const departmentCourses = courses.filter((course) => course.dept === dept); 
-        setFilteredCourses(
-          departmentCourses.filter(
-            (course) =>
-              course.coursename.toLowerCase().includes(query.toLowerCase()) ||
-              course.coursecode.toLowerCase().includes(query.toLowerCase())
-          )
-        );
-      };
+        const departmentCourses = courses.filter((course) => course.dept === dept);
+        console.log("Department Courses:", departmentCourses); 
+            setFilteredCourses(
+              departmentCourses.filter(
+                (course) => {
+                    const courseCode = course.coursecode ? String(course.coursecode).toLowerCase() : ""; 
+                    const courseName = course.coursename ? course.coursename.toLowerCase() : "";
+                    return (
+                        courseCode.includes(query.toLowerCase()) || 
+                        courseName.includes(query.toLowerCase())
+                    );
+                }
+                // course.coursename.toLowerCase().includes(query.toLowerCase()) ||
+                // String(course.coursecode).toLowerCase().includes(query.toLowerCase())
+              )
+            );
+            console.log("Filtered Courses after Search:", departmentCourses); 
+          };
     
     //Changing session and deparemnet
     const handleSessionChange = (event) => {
@@ -80,6 +98,7 @@ function SearchCourses() {
                         <Select value={dept} onChange={handleDepartmentChange} label="Session" sx={{ width: '200px' }}>
                             <MenuItem value="ENG">ENG</MenuItem>
                             <MenuItem value="EECS">EECS</MenuItem>
+                            <MenuItem value="PHIL">PHIL</MenuItem>
                         </Select>
                     </FormControl>
                 </Box>
@@ -101,15 +120,19 @@ function SearchCourses() {
                         <TableRow>
                          <TableCell>Course Code</TableCell>
                          <TableCell>Course Title</TableCell>
+                         <TableCell>Instructor</TableCell>
+                         <TableCell>Term</TableCell>
                      </TableRow>
                  </TableHead>
              <TableBody>
-            {filteredCourses.map((course) => (
-                <TableRow key={course.id}>
+            {filteredCourses.map((course, index) => (
+                <TableRow key={index}>
                     <TableCell>
-                        <Link to={`/student-profile/course-details/${course.id}`}>{course.coursecode}</Link>
+                        <Link component={RouterLink} to={`/student-profile/course-details/${course.coursecode}`}>{course.coursecode}</Link>
                     </TableCell>
                     <TableCell>{course.coursename}</TableCell>
+                    <TableCell>{course.courseinstructor}</TableCell>
+                    <TableCell>{course.courseterm}</TableCell>
                 </TableRow>
                 ))}
             </TableBody>
@@ -125,7 +148,6 @@ function SearchCourses() {
             )}
         </Box>
     </Box>
-    );
-}
-   
+    ); }
+
 export default SearchCourses;
