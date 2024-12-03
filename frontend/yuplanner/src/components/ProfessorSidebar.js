@@ -1,10 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import { useUser } from '../UserContext';
+
 
 const ProfessorSidebar = () => {
+  const { user, setUser } = useUser(); 
+  const [professorData, setProfessorData] = useState(null);
+  console.log('Account Details:', user);
+
+
+  useEffect(() => {
+    if (user) {
+      // Fetch student data only if user exists
+      fetch('http://localhost:8080/professor/find', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user), 
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch student data');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setProfessorData(data); 
+        })
+        .catch((error) => {
+          console.error('Error fetching student data:', error);
+        });
+    } else {
+      setProfessorData(null);
+    }
+  }, [user]); 
   return (
     <div className="sidebar" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       {/* Professor Profile Section */}
@@ -15,10 +46,10 @@ const ProfessorSidebar = () => {
         <div className="profile-details">
           <h2 className="professor-name">
             <Link to="/professor-profile" style={{ color: 'white', textDecoration: 'none' }}>
-            Dr. Jane Smith
+            {`${professorData?.firstname || ''} ${professorData?.lastname || ''}`}
             </Link>
             </h2>
-          <p className="professor-id">987654321</p>
+          <p className="professor-id">{professorData?.userid}</p>
           {/* <Link to="/professor-profile" style={{ textDecoration: 'none' }}>
             <Button variant="contained" size="small" className="view-profile-btn">
               View Profile
@@ -33,7 +64,11 @@ const ProfessorSidebar = () => {
       </ul>
 
     {/* Sign Out Button */}
-    <Link to="/login" style={{ textDecoration: 'none', marginTop: '10px' }}>
+    <Link to="/login" style={{ textDecoration: 'none', marginTop: '10px' }}
+    onClick={() => {
+      setUser(null); 
+      setProfessorData(null); 
+    }}>
         <Button variant="contained" className="signout-btn">Sign Out</Button>
     </Link>
     </div>

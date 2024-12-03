@@ -8,4 +8,6 @@ import eecs3311.app.yuplanner.model.course;
 public interface courseService {
     public course saveCourse(course course);
     public List<course> getAllCourses();
+    //public course findCourse(course course);
+    public course findCourseByCourseCode(int courseCode);
 }
