@@ -29,7 +29,7 @@ const AdvisorSidebar = () => {
       <ul className="sidebar-menu">
         {/* <li><Link to="/profile" className="sidebar-link">Profile</Link></li> */}
         <li><Link to="/view-students" className="sidebar-link">View Students</Link></li>
-        <li><Link to="/view-courses" className="sidebar-link">View Courses</Link></li>
+        <li><Link to="/advisor-profile/view-courses" className="sidebar-link">Search Courses</Link></li>
       </ul>
 
     {/* Sign Out Button */}

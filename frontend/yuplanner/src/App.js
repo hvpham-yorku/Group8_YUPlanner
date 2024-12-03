@@ -19,6 +19,7 @@ import ViewSchedule from './pages/ViewSchedule';
 import CourseDetails from './pages/CourseDetails.js';
 
 import AdvisorProfile from './pages/AdvisorProfile';
+import AdvisorViewCourses from './pages/AdvisorViewCourses.js';
 function App() {
 
   return (
@@ -37,6 +38,8 @@ function App() {
             </Route>
 
             <Route path="/advisor-profile" element={<AdvisorProfile />}> </Route>
+            <Route path="/advisor-profile/view-courses" element={<AdvisorViewCourses />} />
+            <Route path="/advisor-profile/view-students" element={<SearchCourses />} />
 
             <Route path="/student-profile" element={<StudentProfile />}>
             </Route>
