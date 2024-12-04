@@ -17,7 +17,7 @@
 
 The following tasks are unfinished.
 
-## **User Story #11: Check Enrolment Status**
+## **User Story #12: Check Enrolment Status**
 
 As a student, I want to check the course enrollment status to decide whether to enroll in the course or join the waitlist. 
 
@@ -26,14 +26,14 @@ The courses section should display the status of the section, for example: Seats
 Enrolment status updates automatically as seats fill or become available.
 All changes should be reflected in real-time for students.
 
-## **User Story #12: Academic Progress Tracker**
+## **User Story #13: Academic Progress Tracker**
 As a student, I want to see my academic progress so that I can plan my degree according to the number of courses I have completed and the number left over.
 
 **Criteria of satisfaction**: 
 The progress tracker displays completed courses, remaining courses, and credits earned.
 Once the course is completed, the tracker should update it automatically.
 
-## **User Story# : Rate the Professor**
+## **User Story#14 : Rate the Professor**
 
 As a student, I want to rate the professor, and I want to write down the reviews and how my experience with this professor was. 
 
