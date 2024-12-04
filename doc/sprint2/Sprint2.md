@@ -7,20 +7,20 @@ The goal of this sprint is to enhance the student course and professor managemen
 
 ## **High Priority:**
 
-#### **User Story #6: View Course Description**
+#### **User Story #1: View Course Description**
 As a student, I want to read the course description, so that I can understand the content and the expectations of the course.
 
 **Criteria of satisfaction**: 
 Provide a clear and concise description of each course.
 Display the course description on the course detail page.
 
-#### **User Story #1: Check Prerequisites**:
+#### **User Story #2: Check Prerequisites**:
 As a student, I want to check the requirements for a specific course to ensure eligibility.
 
 **Criteria of satisfaction**: 
 Prerequisites should be displayed on the course details page.
 
-#### **User Story #2: View Class Sections**
+#### **User Story #3: View Class Sections**
 As a student, I want to check the available course sections to choose the section that suits my schedule best. 
 
 **Criteria of satisfaction**: 
@@ -36,7 +36,7 @@ Display all available sections of a course that have available seats.
 Enable students to drop their current section and enroll in another course.
 
 
- #### **User Story #13: Add Courses**
+ #### **User Story #5: Add Courses**
 As a student, I want to be able to add courses to my schedule by using the “Enroll” button after reviewing the course description.
  
 **Criteria of satisfaction**: 
@@ -44,7 +44,7 @@ The enroll button should enable students to add courses directly to their schedu
 
 ## **Medium Priority:**
 
-#### **User Story #10: Update Course Information**
+#### **User Story #6: Update Course Information**
 As a professor, I want to update the course information so that students have access to see the accurate information and what to expect from the course.
 
 **Criteria of satisfaction**: 
@@ -57,7 +57,7 @@ As a professor, I want to view my ratings and read the reviews submitted by the 
 **Criteria of satisfaction**: 
 - Display professor’s ratings and reviews
 
-#### **7. User Story #7: Professor’s Profile**
+#### **7. User Story #8: Professor’s Profile**
 As a professor, I want to edit my profile so that students can see my details and any research programs.
 
 **Criteria of satisfaction:**
@@ -66,21 +66,21 @@ As a professor, I want to edit my profile so that students can see my details an
 
 ## **Low Priority:**
 
-#### **User Story #5: View Full Schedule**
+#### **User Story #9: View Full Schedule**
 As a student, I want to view my semester schedule in a calendar format so that I can avoid scheduling conflicts. 
 
 **Criteria of satisfaction**: 
 Display the timetable in a clear calendar form.
 Accurately display the results within seconds.
 
-## **User Story #9: Download Schedule**
+## **User Story #10: Download Schedule**
 As a student, I want to download my final schedules so that I can store them for my future reference.
 
 **Criteria of satisfaction**: 
 Provide a download option as a PDF.
 Ensure the schedule reflects the recent revision.
 
-#### **User Story #8: Academic Advisor Profile**
+#### **User Story #11: Academic Advisor Profile**
 As an academic advisor, I want to view student names and registered courses, so that I can better guide the students.
 
 **Criteria of satisfaction**: 
