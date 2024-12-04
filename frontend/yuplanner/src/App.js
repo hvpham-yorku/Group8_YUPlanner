@@ -10,13 +10,14 @@ import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
 
-import ViewSchedule from './pages/ViewSchedule';
-import CourseDetails from './pages/CourseDetails.js';
+//import ViewSchedule from './pages/ViewSchedule';
+//import CourseDetails from './pages/CourseDetails.js';
 
 import AdvisorProfile from './pages/AdvisorProfile';
 import AdvisorViewCourses from './pages/AdvisorViewCourses.js';
 import AdvisorViewStudents from './pages/AdvisorViewStudents.js';
 
+//import ViewFullSchedule from './pages/ViewFullSchedule';
 import ViewFullSchedule from './pages/ViewFullSchedule';
 import CourseDetails from './pages/CourseDetails';
 
