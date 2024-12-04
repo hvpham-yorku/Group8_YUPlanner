@@ -1,46 +1,54 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
 import Sidebar from '../components/Sidebar';
-import './DropCourse.css';
 
-const DropCourse = () => { // Changed from DropCourses to DropCourse
-    // Example list of enrolled courses with unique ids
-    const [courses, setCourses] = useState([
-        { id: 1, name: "EECS3201" },
-        { id: 2, name: "EECS2101" },
-        { id: 3, name: "EECS3214" },
-        { id: 4, name: "EECS4214" },
-        { id: 5, name: "EECS4312" },
-        { id: 6, name: "ENG4000" },
-    ]);
-
-    // Function to handle dropping a course
+const DropCourse = ({ enrolledCourses, setEnrolledCourses }) => {
     const dropCourse = (courseId) => {
-        setCourses(courses.filter(course => course.id !== courseId));
+        // Remove the course with the specified id from the enrolledCourses
+        setEnrolledCourses(enrolledCourses.filter(course => course.id !== courseId));
     };
 
     return (
-        <div style={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
             <Sidebar />
-            <div className="drop-courses" style={{ flex: 1, padding: '20px' }}>
-                <h1 className="title">Drop Courses</h1>
-                <ul className="course-list">
-                    {courses.map(course => (
-                        <li key={course.id} className="course-item">
-                            <span className="course-name">{course.name}</span>
-                            <button
-                                className="drop-button"
-                                onClick={() => dropCourse(course.id)}
-                            >
-                                Drop
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-                {courses.length === 0 && (
-                    <p className="no-courses">You have no courses enrolled.</p>
+            <Box sx={{ flex: 1, padding: 2 }}>
+                <Typography variant="h2" gutterBottom>
+                    Drop Courses
+                </Typography>
+                {enrolledCourses.length === 0 ? (
+                    <Typography>No courses enrolled.</Typography>
+                ) : (
+                    <TableContainer sx={{ marginTop: 2, width: '500px', marginX: 'auto' }}>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Course Code</TableCell>
+                                    <TableCell>Course Title</TableCell>
+                                    <TableCell>Actions</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {enrolledCourses.map((course) => (
+                                    <TableRow key={course.id}>
+                                        <TableCell>{course.coursecode}</TableCell>
+                                        <TableCell>{course.coursename}</TableCell>
+                                        <TableCell>
+                                            <Button
+                                                variant="contained"
+                                                color="secondary"
+                                                onClick={() => dropCourse(course.id)}
+                                            >
+                                                Drop
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 )}
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };
 

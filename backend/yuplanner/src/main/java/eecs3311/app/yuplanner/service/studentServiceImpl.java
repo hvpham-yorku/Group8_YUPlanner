@@ -25,6 +25,7 @@ public class studentServiceImpl implements studentService {
         return studentRepository.findAll();
     }
 
+    @Override
     public student findStudent(student student){
         return studentRepository.findByUsernameAndPassword(student.getUsername(), student.getPassword());
     }
