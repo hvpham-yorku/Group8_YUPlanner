@@ -7,4 +7,5 @@ import eecs3311.app.yuplanner.model.professor;
 public interface professorService {
     public professor saveProfessor(professor professor);
     public List<professor> getAllProfessors();
+    public professor findProfessor(professor professor);
 }

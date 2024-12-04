@@ -30,4 +30,15 @@ public class professorController {
     public List<professor> getAllProfessors() {
         return professorService.getAllProfessors();
     }
+
+    @PostMapping("/find")
+    public professor findProfessor(@RequestBody professor professor) {
+        professor foundProfessor = professorService.findProfessor(professor);
+        if (foundProfessor != null) {
+            return foundProfessor;
+        } else {
+            // Return a custom error or response indicating the student was not found
+            return null;  // Or you can throw an exception or return an error message
+        }
+    }
 }
