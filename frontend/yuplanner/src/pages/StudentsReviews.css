@@ -1,0 +1,20 @@
+.reviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .reviews-table th, .reviews-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .reviews-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .reviews-table td {
+    text-align: left;
+  }
+  
