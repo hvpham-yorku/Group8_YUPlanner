@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Removed useNavigate import
 import Sidebar from '../components/Sidebar';
 import { Box, Typography, Button, Divider, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 
 function CourseDetails() {
   const { coursecode } = useParams();  // Get the courseCode from the URL parameter
   const [course, setCourse] = useState(null);  // Course data from API
-  const navigate = useNavigate();
   console.log("Course Code:", coursecode);
 
   // Fetch the course data when the component is mounted
@@ -45,77 +44,60 @@ function CourseDetails() {
         <Divider sx={{ marginY: 2 }} />
 
         {/* Course Details Table with Fields in X-axis (horizontal) */}
-      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-            <Table sx={{ width: '100%', border: '1px solid #ccc' }}>
-      {/* <Table sx={{ minWidth: 650 }} aria-label="course details table"> */}
-        <TableHead>
-            <TableRow>
-              {/* Define each field as a column header */}
-              <TableCell><strong>Course Name</strong></TableCell>
-              <TableCell><strong>Course Code</strong></TableCell>
-              <TableCell><strong>Instructor</strong></TableCell>
-              <TableCell><strong>Term</strong></TableCell>
-              <TableCell><strong>Day</strong></TableCell>
-              <TableCell><strong>Time</strong></TableCell>
-              <TableCell><strong>Duration</strong></TableCell>
-              <TableCell><strong>Location</strong></TableCell>
-              <TableCell><strong>Campus</strong></TableCell>
-              <TableCell><strong>Prerequisites</strong></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              {/* Corresponding details for each field */}
-              <TableCell>{course.coursename}</TableCell>
-              <TableCell>{course.coursecode}</TableCell>
-              <TableCell>{course.courseinstructor}</TableCell>
-              <TableCell>{course.courseterm}</TableCell>
-              <TableCell>{course.courseday}</TableCell>
-              <TableCell>{course.coursetime}</TableCell>
-              <TableCell>{course.courseduration} minutes</TableCell>
-              <TableCell>{course.courselocation}</TableCell>
-              <TableCell>{course.coursecampus}</TableCell>
-              <TableCell>{course.courseprerequisites}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+          <Table sx={{ width: '100%', border: '1px solid #ccc' }}>
+            <TableHead>
+              <TableRow>
+                {/* Define each field as a column header */}
+                <TableCell><strong>Course Name</strong></TableCell>
+                <TableCell><strong>Course Code</strong></TableCell>
+                <TableCell><strong>Instructor</strong></TableCell>
+                <TableCell><strong>Term</strong></TableCell>
+                <TableCell><strong>Day</strong></TableCell>
+                <TableCell><strong>Time</strong></TableCell>
+                <TableCell><strong>Duration</strong></TableCell>
+                <TableCell><strong>Location</strong></TableCell>
+                <TableCell><strong>Campus</strong></TableCell>
+                <TableCell><strong>Prerequisites</strong></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                {/* Corresponding details for each field */}
+                <TableCell>{course.coursename}</TableCell>
+                <TableCell>{course.coursecode}</TableCell>
+                <TableCell>{course.courseinstructor}</TableCell>
+                <TableCell>{course.courseterm}</TableCell>
+                <TableCell>{course.courseday}</TableCell>
+                <TableCell>{course.coursetime}</TableCell>
+                <TableCell>{course.courseduration} minutes</TableCell>
+                <TableCell>{course.courselocation}</TableCell>
+                <TableCell>{course.coursecampus}</TableCell>
+                <TableCell>{course.courseprerequisites}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
 
-        <Divider sx={{ marginY: 2 }} />
+          <Divider sx={{ marginY: 2 }} />
 
-        {/* Back button */}
-        <Button
-          variant="contained"
-          color="error"
-          style={{
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            zIndex: 1000,
-          }}
-          onClick={() => window.history.back()}
-        >
-          Back
-        </Button>
-
-        {/* Enroll button */}
-        <Button
-          variant="contained"
-          color="error"
-          sx={{
-            alignSelf: 'center',
-            padding: '10px 20px',
-            minWidth: '120px',
-            height: '50px',
-            fontSize: '16px',
-          }}
-          onClick={() => console.log(`Enrolling in course ${course.coursecode}`)}
-        >
-          Enroll
+          {/* Back button */}
+          <Button
+            variant="contained"
+            color="error"
+            style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              zIndex: 1000,
+            }}
+            onClick={() => window.history.back()}
+          >
+            Back
           </Button>
+        </Box>
+      </Box>
     </Box>
-  </Box>
-  </Box>
-);
+  );
 }
 
 export default CourseDetails;
