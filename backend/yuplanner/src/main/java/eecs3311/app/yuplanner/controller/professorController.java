@@ -41,4 +41,32 @@ public class professorController {
             return null;  // Or you can throw an exception or return an error message
         }
     }
+    //___________ MAVRA _______//
+    /*
+    @PostMapping("/login")
+	public ResponseEntity<?> findProfessor(@RequestBody professor profesor) {
+		professor foundProfessor = professorService.findByUsername(profesor.getUsername());
+		if (foundProfessor != null && foundProfessor.getPassword().equals(profesor.getPassword())) {
+			return ResponseEntity.ok(foundProfessor);
+		} else {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+		}
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<?> updateProfessor(@RequestBody professor professor) {
+	    professor existingProfessor = professorService.findById(professor.getId());
+	    if (existingProfessor == null) {
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Professor not found");
+	    }
+	    existingProfessor.setFirstname(professor.getFirstname());
+	    existingProfessor.setLastname(professor.getLastname());
+	    existingProfessor.setUsername(professor.getUsername());
+	    existingProfessor.setPassword(professor.getPassword());
+	    existingProfessor.setCourses(professor.getCourses());
+
+	    professorService.saveProfessor(existingProfessor);
+	    return ResponseEntity.ok(existingProfessor);
+	}
+    */
 }

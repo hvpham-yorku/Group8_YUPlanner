@@ -1,0 +1,23 @@
+.manage-courses-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .add-course-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-course-btn:hover {
+    background-color: #45a049;
+  }
+  
