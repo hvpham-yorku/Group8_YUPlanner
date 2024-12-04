@@ -73,7 +73,7 @@ As a student, I want to view my semester schedule in a calendar format so that I
 Display the timetable in a clear calendar form.
 Accurately display the results within seconds.
 
-## **User Story #10: Download Schedule**
+#### **User Story #10: Download Schedule**
 As a student, I want to download my final schedules so that I can store them for my future reference.
 
 **Criteria of satisfaction**: 
