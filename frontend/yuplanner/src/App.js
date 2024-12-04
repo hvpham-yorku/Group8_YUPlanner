@@ -9,24 +9,14 @@ import ProfessorProfile from './pages/ProfessorProfile';
 import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
-
-
 import ManageCourses from './pages/ManageCourses';
 import EditProfessorProfile from './pages/EditProfessorProfile';
 import StudentsReviews from './pages/StudentsReviews';
-
-
-//import ViewSchedule from './pages/ViewSchedule';
-//import CourseDetails from './pages/CourseDetails.js';
-
 import AdvisorProfile from './pages/AdvisorProfile';
-import AdvisorViewCourses from './pages/AdvisorViewCourses.js';
-import AdvisorViewStudents from './pages/AdvisorViewStudents.js';
-
-//import ViewFullSchedule from './pages/ViewFullSchedule';
+import AdvisorViewCourses from './pages/AdvisorViewCourses';
+import AdvisorViewStudents from './pages/AdvisorViewStudents';
 import ViewFullSchedule from './pages/ViewFullSchedule';
 import CourseDetails from './pages/CourseDetails';
-
 
 function App() {
   // State to manage enrolled courses
