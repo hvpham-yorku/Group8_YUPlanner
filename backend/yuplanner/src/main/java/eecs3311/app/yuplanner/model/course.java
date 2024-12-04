@@ -1,5 +1,6 @@
 package eecs3311.app.yuplanner.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +12,8 @@ public class course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int coursecode;
+    @Column(name = "coursecode") // Match this to your database column name
+    private int courseCode;
     private String dept;
     private String coursename;
     private String courseday;
@@ -38,11 +40,11 @@ public class course {
     }
 
     public int getCoursecode() {
-        return coursecode;
+        return courseCode;
     }
 
-    public void setCourseCode(int coursecode) {
-        this.coursecode = coursecode;
+    public void setCourseCode(int courseCode) {
+        this.courseCode = courseCode;
     }
 
     public String getDept() {
