@@ -9,8 +9,17 @@ import ProfessorProfile from './pages/ProfessorProfile';
 import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
+
+import ViewSchedule from './pages/ViewSchedule';
+import CourseDetails from './pages/CourseDetails.js';
+
+import AdvisorProfile from './pages/AdvisorProfile';
+import AdvisorViewCourses from './pages/AdvisorViewCourses.js';
+import AdvisorViewStudents from './pages/AdvisorViewStudents.js';
+
 import ViewFullSchedule from './pages/ViewFullSchedule';
 import CourseDetails from './pages/CourseDetails';
+
 
 function App() {
   // State to manage enrolled courses
@@ -22,9 +31,28 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/professor-profile" element={<ProfessorProfile />} />
+
+          
+            <Route path="/login" element={<Login/>} />
+            
+
+            <Route path="/signup" element={<Signup/>}>
+            </Route>
+
+            <Route path="/professor-profile" element={<ProfessorProfile />}>
+            </Route>
+
+            <Route path="/advisor-profile" element={<AdvisorProfile />}> </Route>
+            <Route path="/advisor-profile/view-courses" element={<AdvisorViewCourses />} />
+            <Route path="/advisor-profile/view-students" element={<AdvisorViewStudents />} />
+
+            //<Route path="/student-profile" element={<StudentProfile />}></Route>
+            //<Route path="/student-profile/search-courses" element={<SearchCourses />} />
+            //<Route path="/student-profile/drop-course" element={<DropCourse />} />
+
+            //<Route path="/login" element={<Login />} />
+            //<Route path="/signup" element={<Signup />} />
+            //<Route path="/professor-profile" element={<ProfessorProfile />} />
             <Route path="/student-profile" element={<StudentProfile />} />
             <Route 
               path="/student-profile/search-courses" 
@@ -53,6 +81,7 @@ function App() {
                 />
               } 
             />
+
             <Route path="/student-profile/course-details/:id" element={<CourseDetails />} />
           </Routes>
         </div>

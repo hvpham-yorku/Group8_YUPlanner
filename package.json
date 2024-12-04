@@ -1,8 +1,12 @@
 {
   "dependencies": {
+//<<<<<<< advisor-view-students
+    "axios": "^1.7.8"
+//=======
     "@react-pdf/renderer": "^4.1.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4"
+//>>>>>>> main
   }
 }
