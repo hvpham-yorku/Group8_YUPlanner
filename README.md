@@ -114,5 +114,5 @@ Please follow the guidelines below to contribute to the project:
 - **Pull Requests**: Submit pull requests to the `main` branch. Ensure your code is well-documented and includes tests. All pull requests will be reviewed by a team member before being merged.
 
 ## Demo Video
-Sprint1: https://www.youtube.com/watch?v=25Xqdr13NMs&feature=youtu.be
-Sprint2: https://youtu.be/3GhPyGNPRdU
+- Sprint1: https://www.youtube.com/watch?v=25Xqdr13NMs&feature=youtu.be
+- Sprint2: https://youtu.be/3GhPyGNPRdU
