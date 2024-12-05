@@ -67,13 +67,15 @@ git clone https://github.com/hvpham-yorku/project-group_8.git
 ### Backend
 
 1. Run the database file from `backend/db/yuplanner.sql` using MySQL Workbench Desktop Application
-  a. Open up MYSQL
-  b. Create a new schema and name it yuplanner
-  c. Go to server on the top bar and click data import
-  d. On data import select a "Import from Self-Contained File" and look for the sql file in your folder it should be in project-group_8\backend\db
-  e. Go to "Default Schema To Be Imported To" and select the "Default Target Schema" as yuplanner (the schema you just created)
-  f. Dump data and structure
-  g. Go to Import Progress Tab and Start Import
+    - Open up MYSQL
+    - Create a new schema and name it yuplanner
+    - Go to server on the top bar and click data import
+    - On data import select a "Import from Self-Contained File" and look for the sql file in your folder it should be in project-group_8\backend\db
+    - Go to "Default Schema To Be Imported To" and select the "Default Target Schema" as yuplanner (the schema you just created)
+    - Dump data and structure
+    - Go to Import Progress Tab and Start Import
+
+
 2. Navigate to the backend directory:
     ```sh
     cd doc/sprint0/setup/backend/yuplanner
