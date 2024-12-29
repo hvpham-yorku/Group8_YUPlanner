@@ -10,57 +10,45 @@ function SearchCourses({ enrolledCourses, setEnrolledCourses }) {
     const [filteredCourses, setFilteredCourses] = useState([]);
     const [courses, setCourses] = useState([]);
 
+    // Hardcoded sample courses
+    const sampleCourses = [
+        { id: 1, coursecode: 'ENG3000', coursename: 'Professional Engineering Practice', dept: 'ENG' },
+        { id: 2, coursecode: 'EECS2101', coursename: 'Fundamentals of Data Structures', dept: 'EECS' },
+        { id: 3, coursecode: 'EECS3213', coursename: 'Communication Networks', dept: 'EECS' },
+        { id: 4, coursecode: 'EECS3221', coursename: 'Operating System Fundamentals', dept: 'EECS' },
+        { id: 5, coursecode: 'ENG4000', coursename: 'Engineering Project', dept: 'ENG' },
+        { id: 6, coursecode: 'PHYS1470', coursename: 'Highlights of Astronomy', dept: 'PHYS' },
+    ];
+
     useEffect(() => {
-        fetch("http://localhost:8080/course/getAll")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log("Fetched courses:", data);
-                setCourses(data);
-                setFilteredCourses(data);
-            })
-            .catch((error) => console.error("Error fetching courses:", error));
+        // Set hardcoded courses instead of fetching from the API
+        setCourses(sampleCourses);
+        setFilteredCourses(sampleCourses); // Show all courses initially
     }, []);
 
-    const handleDepartmentChange = (event) => {
-        const selectedDepartment = event.target.value;
-        setDepartment(selectedDepartment);
-        setSearchQuery('');
-        const departmentCourses = courses.filter((course) => course.dept === selectedDepartment);
-        setFilteredCourses(departmentCourses);
-    };
+    // Update filtered courses based on department and search query
+    useEffect(() => {
+        let filtered = courses;
 
-    const handleSearchChange = (event) => {
-        const query = event.target.value;
-        setSearchQuery(query);
-        
-        const departmentCourses = courses.filter((course) => course.dept === dept);
-        setFilteredCourses(
-            departmentCourses.filter((course) => {
+        // Filter by department if selected
+        if (dept) {
+            filtered = filtered.filter((course) => course.dept === dept);
+        }
+
+        // Filter by search query
+        if (searchQuery) {
+            filtered = filtered.filter((course) => {
                 const courseCode = course.coursecode ? String(course.coursecode).toLowerCase() : ""; 
                 const courseName = course.coursename ? course.coursename.toLowerCase() : "";
                 return (
-                    courseCode.includes(query.toLowerCase()) || 
-                    courseName.includes(query.toLowerCase())
+                    courseCode.includes(searchQuery.toLowerCase()) || 
+                    courseName.includes(searchQuery.toLowerCase())
                 );
-            })
-        );
-    };
-
-    const handleSessionChange = (event) => {
-        setSession(event.target.value);
-    };
-
-    useEffect(() => {
-        if (dept) {
-            const departmentCourses = courses.filter((course) => course.dept === dept);
-            setFilteredCourses(departmentCourses);
+            });
         }
-    }, [dept, courses]);
+
+        setFilteredCourses(filtered);
+    }, [dept, searchQuery, courses]);
 
     const handleEnroll = (course) => {
         if (!enrolledCourses.some(enrolled => enrolled.id === course.id)) {
@@ -85,14 +73,14 @@ function SearchCourses({ enrolledCourses, setEnrolledCourses }) {
                     <Box sx={{ display: 'flex', gap: 2 }}>
                         <FormControl fullWidth>
                             <InputLabel>Session</InputLabel>
-                            <Select value={session} onChange={handleSessionChange} label="Session" sx={{ width: '200px' }}>
+                            <Select value={session} onChange={(e) => setSession(e.target.value)} label="Session" sx={{ width: '200px' }}>
                                 <MenuItem value="FW2025">FW2025</MenuItem>
                                 <MenuItem value="FW2024">FW2024</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl fullWidth>
                             <InputLabel>Department</InputLabel>
-                            <Select value={dept} onChange={handleDepartmentChange} label="Department" sx={{ width: '200px' }}>
+                            <Select value={dept} onChange={(e) => setDepartment(e.target.value)} label="Department" sx={{ width: '200px' }}>
                                 <MenuItem value="ENG">ENG</MenuItem>
                                 <MenuItem value="EECS">EECS</MenuItem>
                                 <MenuItem value="PHIL">PHIL</MenuItem>
@@ -100,9 +88,9 @@ function SearchCourses({ enrolledCourses, setEnrolledCourses }) {
                         </FormControl>
                     </Box>
 
-                    <TextField label="Search Course" variant="outlined" fullWidth value={searchQuery} onChange={handleSearchChange} sx={{ width: '500px' }} />
+                    <TextField label="Search Course" variant="outlined" fullWidth value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} sx={{ width: '500px' }} />
                     
-                    {filteredCourses.length > 0 && (
+                    {filteredCourses.length > 0 ? (
                         <TableContainer sx={{ marginTop: 2, width: '500px', marginX: 'auto' }}>
                             <Table>
                                 <TableHead>
@@ -129,9 +117,7 @@ function SearchCourses({ enrolledCourses, setEnrolledCourses }) {
                                 </TableBody>
                             </Table>
                         </TableContainer>
-                    )}
-
-                    {filteredCourses.length === 0 && searchQuery && (
+                    ) : (
                         <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
                             No courses found
                         </Typography>
