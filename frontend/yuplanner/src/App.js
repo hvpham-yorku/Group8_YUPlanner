@@ -9,19 +9,18 @@ import ProfessorProfile from './pages/ProfessorProfile';
 import SearchCourses from './pages/SearchCourses';
 import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
+import ManageCourses from './pages/ManageCourses';
+import EditProfessorProfile from './pages/EditProfessorProfile';
+import StudentsReviews from './pages/StudentsReviews';
+import AdvisorProfile from './pages/AdvisorProfile';
+import AdvisorViewCourses from './pages/AdvisorViewCourses';
+import AdvisorViewStudents from './pages/AdvisorViewStudents';
 import ViewFullSchedule from './pages/ViewFullSchedule';
 import CourseDetails from './pages/CourseDetails';
 
 function App() {
   // State to manage enrolled courses
-  const [enrolledCourses, setEnrolledCourses] = useState([
-    { id: 1, coursecode: 'ENG3000', coursename: 'Professional Engineering Practice', dept: 'ENG' },
-    { id: 2, coursecode: 'EECS2101', coursename: 'Fundamentals of Data Structures', dept: 'EECS' },
-    { id: 3, coursecode: 'EECS3213', coursename: 'Communication Networks', dept: 'EECS' },
-    { id: 4, coursecode: 'EECS3221', coursename: 'Operating System Fundamentals', dept: 'EECS' },
-    { id: 5, coursecode: 'ENG4000', coursename: 'Engineering Project', dept: 'ENG' },
-    { id: 6, coursecode: 'PHYS1470', coursename: 'Highlights of Astronomy', dept: 'PHYS' },
-  ]);
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
 
   return (
     <UserProvider>
@@ -29,9 +28,36 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/professor-profile" element={<ProfessorProfile />} />
+
+
+            <Route path="/edit-professor-profile" element={<EditProfessorProfile />} />
+            //<Route path="/login" element={<Login/>} />
+ 
+            <Route path="/manage-courses" element={<ManageCourses />} /> {/* Correctly reference ManageCourses */}
+
+            <Route path="/students-reviews" element={<StudentsReviews/>}>
+            </Route>
+          
+            <Route path="/login" element={<Login/>} />
+            
+
+            <Route path="/signup" element={<Signup/>}>
+            </Route>
+
+            <Route path="/professor-profile" element={<ProfessorProfile />}>
+            </Route>
+
+            <Route path="/advisor-profile" element={<AdvisorProfile />}> </Route>
+            <Route path="/advisor-profile/view-courses" element={<AdvisorViewCourses />} />
+            <Route path="/advisor-profile/view-students" element={<AdvisorViewStudents />} />
+
+            //<Route path="/student-profile" element={<StudentProfile />}></Route>
+            //<Route path="/student-profile/search-courses" element={<SearchCourses />} />
+            //<Route path="/student-profile/drop-course" element={<DropCourse />} />
+
+            //<Route path="/login" element={<Login />} />
+            //<Route path="/signup" element={<Signup />} />
+            //<Route path="/professor-profile" element={<ProfessorProfile />} />
             <Route path="/student-profile" element={<StudentProfile />} />
             <Route 
               path="/student-profile/search-courses" 
@@ -51,14 +77,7 @@ function App() {
                 />
               } 
             />
-            <Route 
-              path="/student-profile/your-progress" 
-              element={
-                <YourProgress 
-                  enrolledCourses={enrolledCourses} 
-                />
-              } 
-            />
+            <Route path="/student-profile/your-progress" element={<YourProgress />} />
             <Route 
               path="/student-profile/view-schedule" 
               element={
@@ -67,6 +86,7 @@ function App() {
                 />
               } 
             />
+
             <Route path="/student-profile/course-details/:id" element={<CourseDetails />} />
           </Routes>
         </div>

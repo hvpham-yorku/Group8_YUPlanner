@@ -1,52 +1,47 @@
 import React from 'react';
 import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
+import Sidebar from '../components/Sidebar';
 
-function DropCourses({ enrolledCourses, setEnrolledCourses }) {
-    const handleDrop = (course) => {
-        // Filter out the course to drop
-        const updatedCourses = enrolledCourses.filter(enrolled => enrolled.id !== course.id);
-        setEnrolledCourses(updatedCourses);
-        alert(`Dropped ${course.coursename}`);
+const DropCourse = ({ enrolledCourses = [], setEnrolledCourses }) => {
+    const dropCourse = (courseId) => {
+        // Remove the course with the specified id from the enrolledCourses
+        setEnrolledCourses(enrolledCourses.filter(course => course.id !== courseId));
     };
 
     return (
-        <Box sx={{ padding: 2 }}>
-            <Typography variant="h2" gutterBottom sx={{ marginBottom: 5 }}>
-                Drop Courses
-            </Typography>
-
-            {enrolledCourses.length > 0 ? (
-                <TableContainer sx={{ marginTop: 2, width: '500px', marginX: 'auto' }}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Course Code</TableCell>
-                                <TableCell>Course Title</TableCell>
-                                <TableCell>Actions</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {enrolledCourses.map((course) => (
-                                <TableRow key={course.id}>
-                                    <TableCell>{course.coursecode}</TableCell>
-                                    <TableCell>{course.coursename}</TableCell>
-                                    <TableCell>
-                                        <Button variant="contained" color="secondary" onClick={() => handleDrop(course)}>
-                                            Drop
-                                        </Button>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            ) : (
-                <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
-                    No courses enrolled.
+        <Box sx={{ display: 'flex' }}>
+            <Sidebar />
+            <Box sx={{ flex: 1, padding: 2 }}>
+                <Typography variant="h2" gutterBottom>
+                    Drop Courses
                 </Typography>
-            )}
+                {Array.isArray(enrolledCourses) && enrolledCourses.length === 0 ? (
+                    <Typography>No courses enrolled.</Typography>
+                ) : (
+                    <TableContainer sx={{ marginTop: 2, width: '500px', marginX: 'auto' }}>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Course Name</TableCell>
+                                    <TableCell>Action</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {Array.isArray(enrolledCourses) && enrolledCourses.map((course) => (
+                                    <TableRow key={course.id}>
+                                        <TableCell>{course.name}</TableCell>
+                                        <TableCell>
+                                            <Button onClick={() => dropCourse(course.id)}>Drop</Button>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                )}
+            </Box>
         </Box>
     );
-}
+};
 
-export default DropCourses;
+export default DropCourse;
