@@ -11,6 +11,7 @@ import DropCourse from './pages/DropCourse';
 import YourProgress from './pages/YourProgress';
 import ViewFullSchedule from './pages/ViewFullSchedule';
 import CourseDetails from './pages/CourseDetails';
+import AIHelper from './pages/AIHelper'; // Import the new AIHelper component
 
 function App() {
   // State to manage enrolled courses
@@ -68,6 +69,7 @@ function App() {
               } 
             />
             <Route path="/student-profile/course-details/:id" element={<CourseDetails />} />
+            <Route path="/student-profile/ai-helper" element={<AIHelper />} /> {/* New AI Helper Route */}
           </Routes>
         </div>
       </Router>
@@ -76,6 +78,3 @@ function App() {
 }
 
 export default App;
-
-
-

@@ -1,0 +1,49 @@
+.ai-helper {
+    padding: 30px; /* Increased padding for a larger feel */
+    background-color: #f5f5f5; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Increased maximum width for larger component */
+    margin: 40px auto; /* Center the component with more margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .ai-helper h1 {
+    text-align: center; /* Centered title */
+    color: #333; /* Dark text color */
+  }
+  
+  .ai-helper-input {
+    display: flex; /* Flexbox for input and button */
+    margin-top: 20px;
+  }
+  
+  .ai-helper-input input {
+    flex: 1; /* Input takes remaining space */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .ai-helper-input button {
+    padding: 10px 15px; /* Button padding */
+    margin-left: 10px; /* Space between input and button */
+    background-color: #d9534f; /* Red color for buttons */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .ai-helper-input button:hover {
+    background-color: #c9302c; /* Darker red shade on hover */
+  }
+  
+  .ai-helper-response {
+    margin-top: 20px; /* Space above response */
+    padding: 10px; /* Padding for response area */
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
