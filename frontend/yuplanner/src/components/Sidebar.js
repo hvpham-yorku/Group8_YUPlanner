@@ -23,12 +23,8 @@ const Sidebar = () => {
           }
           return response.json();
         })
-        .then((data) => {
-          setStudentData(data);
-        })
-        .catch((error) => {
-          console.error('Error fetching student data:', error);
-        });
+        .then((data) => setStudentData(data))
+        .catch((error) => console.error('Error fetching student data:', error));
     } else {
       setStudentData(null);
     }
@@ -36,17 +32,24 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
+      {/* Profile Section */}
       <div className="profile-section">
         <Link to="/student-profile" style={{ textDecoration: 'none' }}>
-          <Avatar src="/path-to-profile-pic.jpg" alt="Profile" sx={{ width: 80, height: 80 }} />
+          <Avatar
+            src={studentData?.profilePicture || '/placeholder-avatar.png'}
+            alt="Profile"
+            sx={{ width: 80, height: 80 }}
+          />
         </Link>
         <div className="profile-details">
           <Link to="/student-profile" style={{ color: 'white', textDecoration: 'none' }}>
             <h2 className="student-name">{`${studentData?.firstname || ''} ${studentData?.lastname || ''}`}</h2>
           </Link>
-          <p className="student-id">{studentData?.userid}</p>
+          <p className="student-id">{studentData?.userid || 'ID Not Available'}</p>
         </div>
       </div>
+
+      {/* Sidebar Menu */}
       <ul className="sidebar-menu">
         <li className={location.pathname.includes('search-courses') ? 'active' : ''}>
           <Link to="/student-profile/search-courses" className="sidebar-link">Search Courses</Link>
@@ -60,12 +63,20 @@ const Sidebar = () => {
         <li className={location.pathname.includes('view-schedule') ? 'active' : ''}>
           <Link to="/student-profile/view-schedule" className="sidebar-link">View Full Schedule</Link>
         </li>
+        <li className={location.pathname.includes('ai-helper') ? 'active' : ''}>
+          <Link to="/student-profile/ai-helper" className="sidebar-link">AI Helper</Link>
+        </li>
       </ul>
-      <Link to="/login" style={{ textDecoration: 'none', marginTop: '10px' }}
+
+      {/* Sign Out Button */}
+      <Link
+        to="/login"
+        style={{ textDecoration: 'none', marginTop: '10px' }}
         onClick={() => {
           setUser(null);
           setStudentData(null);
-        }}>
+        }}
+      >
         <Button variant="contained" className="signout-btn">
           Sign Out
         </Button>
